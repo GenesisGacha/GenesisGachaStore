@@ -46,6 +46,83 @@
   .btn-discord { background: linear-gradient(90deg, #1e2447 0%, #5865F2 50%, #1e2447 100%); color: #fff; border: 2px solid #8ea1e1; border-radius: 10px; padding: 13px 22px; font-size: 14px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 18px rgba(88,101,242,0.45); transition: 0.2s; }
   .btn-discord:hover { transform: translateY(-2px); border-color: #ffcc00; }
   @media (max-width: 640px) { body { padding: 10px; } .hero-container { border-radius: 10px; } .action-bar { flex-direction: column; } .btn-catalog, .btn-discord { width: 100%; font-size: 13.5px; } }
+
+  .trusted-box {
+    position: fixed;
+    top: 75px;
+    right: calc(50% + 540px + ((50vw - 540px) / 2));
+    transform: translateX(50%);
+    z-index: 95;
+    background: radial-gradient(circle at 50% 20%, #3b1c5e 0%, #120821 100%);
+    border: 2px solid #ffcc00;
+    border-radius: 12px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 204, 0, 0.55);
+    text-align: center;
+    max-width: 195px;
+  }
+  .trusted-title {
+    color: #ffe680;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    text-shadow: 0 0 8px rgba(255, 204, 0, 0.7);
+  }
+  .trusted-box img {
+    width: 100%;
+    max-width: 165px;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+  }
+  .flag-clean-wrap {
+    position: fixed;
+    top: 75px;
+    left: calc(50% + 540px + ((50vw - 540px) / 2));
+    transform: translateX(-50%);
+    z-index: 95;
+    background: #0d0717;
+    border: 2px solid #a855f7;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    padding: 6px 6px 4px 6px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.85), 0 0 14px rgba(168, 85, 247, 0.45);
+  }
+  .live-top-box {
+    position: fixed;
+    top: 354px;
+    left: calc(50% + 540px + ((50vw - 540px) / 2));
+    transform: translateX(-50%);
+    z-index: 96;
+    width: 112px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: #0d0717;
+    border: 2px solid #a855f7;
+    border-top: 1.5px solid #ffcc00;
+    border-radius: 0 0 10px 10px;
+    padding: 6px 8px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.85), 0 0 14px rgba(255, 204, 0, 0.4);
+  }
+  @media (max-width: 1520px) {
+    .trusted-box, .flag-clean-wrap, .live-top-box {
+      position: static;
+      transform: none;
+      margin: 12px auto;
+      border-radius: 10px;
+      border: 2px solid #a855f7;
+    }
+    .trusted-box { border-color: #ffcc00; }
+    .live-top-box { border-color: #ffcc00; }
+  }
+
 </style>
 </head>
 <body>
@@ -56,8 +133,42 @@
   </div>
   <div class="hero-container"><img src="home_config/home_banner.png" alt="Genesis Gacha Store"></div>
   <div class="action-bar">
-    <a href="https://github.io" target="_top" class="btn-catalog">🔥 Browse Bleach: Soul Resonance Catalog</a>
-    <button type="button" class="btn-discord" onclick="navigator.clipboard.writeText('GenesisGacha#0271'); this.innerText='✔ Discord Copied!';">📋 Copy Discord: GenesisGacha#0271</button>
+    <a href="https://github.io" target="_top" class="btn-catalog">Bleach Soul Resonance APLUS Starter Accounts</a>
+    
   </div>
+
+  <div class="trusted-box">
+    <div class="trusted-title">⭐ 100% Trusted Seller ⭐</div>
+    <a href="https://www.epicnpc.com/" target="_blank" rel="noopener">
+      <img src="home_config/epicnpc.png" alt="EpicNPC Trusted Seller">
+    </a>
+  </div>
+
+  <div class="flag-clean-wrap">
+    <a href="https://info.flagcounter.com/E57c"><img src="https://s01.flagcounter.com/count2/E57c/bg_000000/txt_FFFFFF/border_CCCCCC/columns_1/maxflags_10/viewers_0/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+  </div>
+
+  <div class="live-top-box" title="Real-time visitors online">
+    <span style="display:inline-block; width:8px; height:8px; background:#22c55e; border-radius:50%; box-shadow:0 0 8px #22c55e;"></span>
+    <span style="font-size:12px; font-weight:bold; color:#ffe680;">LIVE:</span>
+    <script id="_waugen">var _wau = _wau || []; _wau.push(["small", "bleachcat26", "gen"]);</script>
+    <script async src="//waust.at/s.js"></script>
+  </div>
+
+  
+  
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://tawk.to';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
 </body>
 </html>
