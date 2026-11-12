@@ -522,6 +522,80 @@
     }
   }
 
+
+  /* DISCORD I NACINI PLACANJA ISPOD BANERA (IDENTICNO KAO U KATALOGU) */
+  .info-bar {
+    width: 100%;
+    max-width: 1080px;
+    margin: 14px auto 0 auto;
+    background: linear-gradient(90deg, #120821 0%, #241042 50%, #120821 100%);
+    border: 2px solid #a855f7;
+    border-radius: 12px;
+    padding: 12px 18px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 14.5px;
+    font-weight: bold;
+    color: #f3e8ff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.85), 0 0 15px rgba(168, 85, 247, 0.4);
+    text-align: center;
+  }
+  .dc-tag {
+    color: #ffe680;
+    font-weight: 900;
+    background: rgba(88, 28, 135, 0.55);
+    padding: 4px 10px;
+    border-radius: 7px;
+    border: 1px solid #ffcc00;
+  }
+  .btn-copy-dc {
+    background: linear-gradient(90deg, #581c87 0%, #9333ea 100%);
+    color: #ffffff;
+    border: 1.5px solid #ffcc00;
+    border-radius: 8px;
+    padding: 5px 12px;
+    font-size: 13px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.4);
+  }
+  .btn-copy-dc:hover {
+    background: #9333ea;
+    box-shadow: 0 0 16px rgba(255, 204, 0, 0.85);
+    transform: translateY(-1px);
+  }
+  .pay-bar {
+    width: 100%;
+    max-width: 1080px;
+    margin: 10px auto 0 auto;
+    background: #0d0717;
+    border: 1.5px solid #ffcc00;
+    border-radius: 10px;
+    padding: 10px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffe680;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8), 0 0 12px rgba(255, 204, 0, 0.35);
+    text-align: center;
+  }
+  .pay-badge {
+    background: rgba(168, 85, 247, 0.2);
+    border: 1px solid #a855f7;
+    color: #ffffff;
+    padding: 4px 11px;
+    border-radius: 7px;
+    font-weight: 800;
+  }
+
 </style>
 </head>
 <body>
@@ -541,6 +615,19 @@
   <div class="container">
     <div class="bleach-top-nav"><a href="https://genesisgachastore.github.io/home/" class="btn-nav-active">🏠 Home • Genesis Gacha Store</a></div>
     <div class="banner-box"><img src="home_config/home_banner.png" alt="Genesis Gacha Store"></div>
+
+    <div class="info-bar">
+      <span>💬 For any questions, prices or more images, add me on Discord:</span>
+      <span class="dc-tag">GenesisGacha#0271</span>
+      <button type="button" id="copyBtnHome" class="btn-copy-dc" onclick="copyDiscordHome()">📋 Copy</button>
+    </div>
+
+    <div class="pay-bar">
+      <span>💳 Accepted Payment Methods:</span>
+      <span class="pay-badge">🅿️ PayPal</span>
+      <span class="pay-badge">🎮 Steam Gift Cards (EU)</span>
+    </div>
+
         <div class="selling-header">
       <div class="selling-line"></div>
       <div class="selling-title">🔥 Currently Available Catalogs 🔥</div>
