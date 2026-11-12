@@ -42,10 +42,86 @@
   .live-top-box { position: fixed; top: 294px; left: calc(50% + 540px + ((50vw - 540px) / 2)); transform: translateX(-50%); z-index: 96; width: 132px; padding: 7px 12px; gap: 7px; display: flex; justify-content: center; align-items: center; gap: 5px; background: #0d0717; border: 2px solid #a855f7; border-top: 1.5px solid #ffcc00; border-radius: 0 0 10px 10px; padding: 6px 8px; box-shadow: 0 6px 18px rgba(0,0,0,0.85), 0 0 14px rgba(255,204,0,0.4); }
   @media (max-width: 1520px) { .trusted-box, .flag-clean-wrap, .live-top-box { position: static; transform: none; margin: 12px auto; border-radius: 10px; border: 2px solid #a855f7; } .trusted-box, .live-top-box { border-color: #ffcc00; } }
   @media (max-width: 640px) { .btn-game { width: 100%; font-size: 13.5px; padding: 12px 16px; } }
+
+  /* Kosmicke magline (Nebula) na bokovima i dnu */
+  @keyframes nebulaFloat {
+    0%, 100% { transform: scale(1) translateY(0); opacity: 0.45; }
+    50% { transform: scale(1.12) translateY(-15px); opacity: 0.8; }
+  }
+  .nebula-left {
+    position: absolute; top: 18%; left: -80px; width: 340px; height: 340px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.35) 0%, rgba(88, 28, 135, 0.1) 50%, transparent 75%);
+    filter: blur(28px); animation: nebulaFloat 8s infinite ease-in-out;
+  }
+  .nebula-right {
+    position: absolute; top: 32%; right: -80px; width: 360px; height: 360px;
+    background: radial-gradient(circle, rgba(255, 204, 0, 0.22) 0%, rgba(147, 51, 234, 0.22) 45%, transparent 75%);
+    filter: blur(30px); animation: nebulaFloat 9.5s infinite ease-in-out 2s;
+  }
+  .soul-aura {
+    position: absolute; bottom: 0; left: 0; width: 100%; height: 180px;
+    background: radial-gradient(ellipse at 50% 100%, rgba(168, 85, 247, 0.45) 0%, rgba(107, 33, 168, 0.15) 55%, transparent 80%);
+    animation: nebulaFloat 6s infinite ease-in-out;
+  }
+
+  /* Dodatni meteori (m4 - m7) razlicitih brzina */
+  @keyframes shootingStarFast {
+    0% { transform: translate(0, 0) rotate(-32deg); opacity: 0; }
+    3% { opacity: 1; }
+    14% { transform: translate(-1300px, 820px) rotate(-32deg); opacity: 0; }
+    100% { transform: translate(-1300px, 820px) rotate(-32deg); opacity: 0; }
+  }
+  .meteor-purple {
+    position: absolute; width: 165px; height: 2.5px;
+    background: linear-gradient(90deg, #ffffff 0%, #e879f9 35%, #7e22ce 75%, transparent 100%);
+    border-radius: 50%; filter: drop-shadow(0 0 8px #d946ef); opacity: 0;
+  }
+  .meteor-purple::before {
+    content: ""; position: absolute; left: 0; top: -2px; width: 6px; height: 6px;
+    border-radius: 50%; background: #ffffff; box-shadow: 0 0 12px #ffffff, 0 0 22px #e879f9;
+  }
+  .m4 { top: 12%; left: 102%; animation: shootingStarFast 6.5s infinite linear 1.9s; }
+  .m5 { top: 38%; left: 98%; animation: shootingStarFast 9s infinite linear 4.4s; }
+  .m6 { top: -4%; left: 48%; animation: shootingStar 7.8s infinite linear 2.7s; }
+  .m7 { top: 55%; left: 104%; animation: shootingStarFast 11s infinite linear 7.1s; }
+
+  /* Dodatne iskre (s6 - s14) */
+  .s6 { left: 6%; width: 3px; height: 3px; background: #f0abfc; box-shadow: 0 0 9px #f0abfc; animation: rise 9.5s infinite 1.4s; }
+  .s7 { left: 18%; width: 5px; height: 5px; background: #ffcc00; box-shadow: 0 0 12px #ff8800; animation: rise 11s infinite 3.1s; }
+  .s8 { left: 34%; width: 3px; height: 3px; background: #ffffff; box-shadow: 0 0 9px #ffcc00; animation: rise 8.2s infinite 5.2s; }
+  .s9 { left: 53%; width: 4px; height: 4px; background: #e879f9; box-shadow: 0 0 10px #e879f9; animation: rise 10.4s infinite 0.9s; }
+  .s10 { left: 73%; width: 5px; height: 5px; background: #fde047; box-shadow: 0 0 12px #fde047; animation: rise 9.1s infinite 2.6s; }
+  .s11 { left: 91%; width: 3px; height: 3px; background: #c084fc; box-shadow: 0 0 9px #c084fc; animation: rise 8.7s infinite 4.7s; }
+  .s12 { left: 95%; width: 4px; height: 4px; background: #ffcc00; box-shadow: 0 0 10px #ffcc00; animation: rise 10.1s infinite 6.3s; }
+
+  /* Blagi svjetlosni odsjaj preko glavnog banera */
+  @keyframes bannerShine {
+    0% { left: -100%; }
+    30%, 100% { left: 150%; }
+  }
+  .banner-box { position: relative; }
+  .banner-box::after {
+    content: ""; position: absolute; top: 0; left: -100%; width: 40%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.14), transparent);
+    transform: skewX(-25deg); animation: bannerShine 7.5s infinite ease-in-out; pointer-events: none;
+  }
+
 </style>
 </head>
 <body>
-  <div class="cosmic-sky"><div class="stars-bg"></div><div class="meteor m1"></div><div class="meteor m2"></div><div class="meteor m3"></div><div class="spark s1"></div><div class="spark s2"></div><div class="spark s3"></div><div class="spark s4"></div><div class="spark s5"></div></div>
+  <div class="cosmic-sky">
+    <div class="stars-bg"></div>
+    <div class="nebula-left"></div>
+    <div class="nebula-right"></div>
+    <div class="soul-aura"></div>
+    <div class="meteor m1"></div><div class="meteor m2"></div><div class="meteor m3"></div>
+    <div class="meteor-purple m4"></div><div class="meteor-purple m5"></div>
+    <div class="meteor m6"></div><div class="meteor-purple m7"></div>
+    <div class="spark s1"></div><div class="spark s2"></div><div class="spark s3"></div><div class="spark s4"></div>
+    <div class="spark s5"></div><div class="spark s6"></div><div class="spark s7"></div><div class="spark s8"></div>
+    <div class="spark s9"></div><div class="spark s10"></div><div class="spark s11"></div><div class="spark s12"></div>
+  </div>
+
   <div class="container">
     <div class="bleach-top-nav"><a href="https://genesisgachastore.github.io/home/" class="btn-nav-active">🏠 Home • Genesis Gacha Store</a></div>
     <div class="banner-box"><img src="home_config/home_banner.png" alt="Genesis Gacha Store"></div>
