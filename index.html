@@ -48,15 +48,45 @@
     0%, 100% { transform: scale(1) translateY(0); opacity: 0.45; }
     50% { transform: scale(1.12) translateY(-15px); opacity: 0.8; }
   }
+  @keyframes nebulaDriftLeft {
+    0%, 100% {
+      transform: translate(0px, 0px) scale(0.95);
+      opacity: 0.45;
+    }
+    50% {
+      transform: translate(calc(50vw - 660px), 35px) scale(1.2);
+      opacity: 0.85;
+    }
+  }
   .nebula-left {
-    position: absolute; top: 18%; left: -80px; width: 340px; height: 340px;
-    background: radial-gradient(circle, rgba(168, 85, 247, 0.35) 0%, rgba(88, 28, 135, 0.1) 50%, transparent 75%);
-    filter: blur(28px); animation: nebulaFloat 8s infinite ease-in-out;
+    position: absolute;
+    top: 16%;
+    left: -60px;
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.48) 0%, rgba(126, 34, 206, 0.22) 45%, transparent 75%);
+    filter: blur(32px);
+    animation: nebulaDriftLeft 11s infinite ease-in-out;
+  }
+  @keyframes nebulaDriftRight {
+    0%, 100% {
+      transform: translate(0px, 0px) scale(0.95);
+      opacity: 0.45;
+    }
+    50% {
+      transform: translate(calc(-50vw + 660px), 35px) scale(1.2);
+      opacity: 0.85;
+    }
   }
   .nebula-right {
-    position: absolute; top: 32%; right: -80px; width: 360px; height: 360px;
-    background: radial-gradient(circle, rgba(255, 204, 0, 0.22) 0%, rgba(147, 51, 234, 0.22) 45%, transparent 75%);
-    filter: blur(30px); animation: nebulaFloat 9.5s infinite ease-in-out 2s;
+    position: absolute;
+    top: 22%;
+    right: -60px;
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.45) 0%, rgba(126, 34, 206, 0.24) 45%, rgba(255, 204, 0, 0.04) 60%, transparent 75%);
+    filter: blur(32px);
+    animation: nebulaDriftRight 11.5s infinite ease-in-out 1.5s;
   }
   .soul-aura {
     position: absolute; bottom: 0; left: 0; width: 100%; height: 180px;
@@ -106,6 +136,104 @@
     transform: skewX(-25deg); animation: bannerShine 7.5s infinite ease-in-out; pointer-events: none;
   }
 
+
+  .selling-header {
+    width: 100%;
+    margin-top: 24px;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+  .selling-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #a855f7, #ffcc00);
+    border-radius: 2px;
+  }
+  .selling-line.right {
+    background: linear-gradient(90deg, #ffcc00, #a855f7, transparent);
+  }
+  .selling-title {
+    color: #ffe680;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-shadow: 0 0 12px rgba(255, 204, 0, 0.75), 0 0 22px rgba(168, 85, 247, 0.7);
+    text-align: center;
+  }
+  @media (max-width: 640px) {
+    .selling-title { font-size: 13.5px; letter-spacing: 1px; }
+  }
+
+
+  /* 100% IDENTICNO CENTRIRANJE I PORAVNANJE NA OBJE STRANICE */
+  html {
+    overflow-y: scroll;
+  }
+  body {
+    padding-top: 15px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    overflow-x: hidden !important;
+  }
+  .container {
+    width: 100% !important;
+    max-width: 1080px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .bleach-top-nav {
+    width: 100% !important;
+    max-width: 1080px !important;
+    margin: 0 auto 14px auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .btn-nav-active, .btn-back-home {
+    padding: 9px 24px !important;
+    font-size: 13.5px !important;
+    line-height: 1.2 !important;
+    box-sizing: border-box !important;
+  }
+  .banner-box {
+    width: 100% !important;
+    max-width: 1080px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .trusted-box {
+    position: fixed !important;
+    top: 15px !important;
+    right: calc(50% + 540px + ((100vw - 1080px) / 4)) !important;
+    transform: translateX(50%) !important;
+    width: 195px !important;
+    max-width: 195px !important;
+  }
+  .flag-clean-wrap {
+    position: fixed !important;
+    top: 15px !important;
+    left: calc(50% + 540px + ((100vw - 1080px) / 4)) !important;
+    transform: translateX(-50%) !important;
+  }
+  .live-top-box {
+    position: fixed !important;
+    top: 294px !important;
+    left: calc(50% + 540px + ((100vw - 1080px) / 4)) !important;
+    transform: translateX(-50%) !important;
+    width: 132px !important;
+  }
+  @media (max-width: 1520px) {
+    .trusted-box, .flag-clean-wrap, .live-top-box {
+      position: static !important;
+      transform: none !important;
+      margin: 12px auto !important;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -125,6 +253,12 @@
   <div class="container">
     <div class="bleach-top-nav"><a href="https://genesisgachastore.github.io/home/" class="btn-nav-active">🏠 Home • Genesis Gacha Store</a></div>
     <div class="banner-box"><img src="home_config/home_banner.png" alt="Genesis Gacha Store"></div>
+        <div class="selling-header">
+      <div class="selling-line"></div>
+      <div class="selling-title">🔥 Currently Available Catalogs 🔥</div>
+      <div class="selling-line right"></div>
+    </div>
+
     <div class="games-row"><a href="https://genesisgachastore.github.io/Bleach-Soul-Resonance-APLUS-Starter-Accounts/" class="btn-game">⚔️ Bleach Soul Resonance APLUS Starter Accounts</a></div>
   </div>
   <div class="trusted-box"><div class="trusted-title">⭐ 100% Trusted Seller ⭐</div><a href="https://epicnpc.com" target="_blank" rel="noopener"><img src="home_config/epicnpc.png" alt="EpicNPC Trusted Seller"></a></div>
