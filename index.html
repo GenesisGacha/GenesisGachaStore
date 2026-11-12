@@ -10,154 +10,50 @@
     0%, 100% { background-color: #08070a; box-shadow: inset 0 0 90px rgba(0, 0, 0, 0.95); }
     50% { background-color: #160b29; box-shadow: inset 0 0 130px rgba(138, 79, 209, 0.25); }
   }
-  body { background-color: #08070a; color: #fff; min-height: 100vh; padding: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow-x: hidden; position: relative; animation: bgBreathe 7s infinite ease-in-out; }
-  .cosmic-sky { position: fixed; inset: 0; pointer-events: none; z-index: 5; overflow: hidden; }
-  @keyframes twinkle { 0%, 100% { opacity: 0.3; transform: scale(0.95); } 50% { opacity: 0.95; transform: scale(1.15); } }
-  .stars-bg { position: absolute; width: 100%; height: 100%; background-image: radial-gradient(1.5px 1.5px at 8% 15%, #fff, transparent), radial-gradient(2px 2px at 18% 68%, #e879f9, transparent), radial-gradient(1.5px 1.5px at 31% 25%, #fde047, transparent), radial-gradient(2px 2px at 47% 12%, #c084fc, transparent), radial-gradient(1.5px 1.5px at 62% 78%, #fff, transparent), radial-gradient(2px 2px at 76% 22%, #ffcc00, transparent), radial-gradient(1.5px 1.5px at 88% 62%, #d8b4fe, transparent), radial-gradient(2px 2px at 94% 35%, #f0abfc, transparent); animation: twinkle 4.5s infinite ease-in-out; }
+  body { background-color: #08070a; color: #fff; min-height: 100vh; padding: 15px 16px 40px 16px; display: flex; flex-direction: column; align-items: center; overflow-x: hidden; position: relative; animation: bgBreathe 7s infinite ease-in-out; }
+  .cosmic-sky { position: fixed; inset: 0; pointer-events: none; z-index: 1; overflow: hidden; }
+  @keyframes twinkle { 0%, 100% { opacity: 0.35; } 50% { opacity: 1; } }
+  .stars-bg { position: absolute; inset: 0; background-image: radial-gradient(1.5px 1.5px at 8% 15%, #fff, transparent), radial-gradient(2px 2px at 18% 68%, #e879f9, transparent), radial-gradient(1.5px 1.5px at 31% 25%, #fde047, transparent), radial-gradient(2px 2px at 47% 12%, #c084fc, transparent), radial-gradient(1.5px 1.5px at 62% 78%, #fff, transparent), radial-gradient(2px 2px at 76% 22%, #ffcc00, transparent), radial-gradient(1.5px 1.5px at 88% 62%, #d8b4fe, transparent), radial-gradient(2px 2px at 94% 35%, #f0abfc, transparent); animation: twinkle 4.5s infinite ease-in-out; }
   @keyframes shootingStar { 0% { transform: translate(0, 0) rotate(-35deg); opacity: 0; } 4% { opacity: 1; } 18% { transform: translate(-1100px, 750px) rotate(-35deg); opacity: 0; } 100% { transform: translate(-1100px, 750px) rotate(-35deg); opacity: 0; } }
   .meteor { position: absolute; width: 135px; height: 2px; background: linear-gradient(90deg, #fff 0%, #ffcc00 35%, #a855f7 75%, transparent 100%); border-radius: 50%; filter: drop-shadow(0 0 6px #ffcc00); opacity: 0; }
   .meteor::before { content: ""; position: absolute; left: 0; top: -2px; width: 6px; height: 6px; border-radius: 50%; background: #fff; box-shadow: 0 0 12px #fff, 0 0 20px #ffcc00; }
   .m1 { top: 5%; left: 95%; animation: shootingStar 7s infinite linear 0.8s; }
   .m2 { top: 24%; left: 105%; animation: shootingStar 10s infinite linear 3.5s; }
   .m3 { top: -2%; left: 65%; animation: shootingStar 8.5s infinite linear 6.2s; }
-  .m4 { top: 45%; left: 102%; animation: shootingStar 12s infinite linear 9s; }
-  @keyframes auraWave { 0%, 100% { opacity: 0.35; transform: scaleY(1); } 50% { opacity: 0.75; transform: scaleY(1.15); } }
-  .soul-aura { position: absolute; bottom: 0; left: 0; width: 100%; height: 170px; background: radial-gradient(ellipse at 50% 100%, rgba(168, 85, 247, 0.45) 0%, rgba(107, 33, 168, 0.15) 55%, transparent 80%); animation: auraWave 5s infinite ease-in-out; }
-  @keyframes rise { 0% { transform: translateY(0) translateX(0) scale(0.7); opacity: 0; } 20% { opacity: 0.95; } 80% { opacity: 0.8; } 100% { transform: translateY(-98vh) translateX(30px) scale(1.2); opacity: 0; } }
+  @keyframes rise { 0% { transform: translateY(0) scale(0.7); opacity: 0; } 25% { opacity: 0.9; } 85% { opacity: 0.7; } 100% { transform: translateY(-98vh) scale(1.2); opacity: 0; } }
   .spark { position: absolute; bottom: -12px; border-radius: 50%; opacity: 0; }
-  .s1 { left: 6%; width: 4px; height: 4px; background: #ffcc00; box-shadow: 0 0 10px #ffcc00; animation: rise 8s infinite 0.2s; }
-  .s2 { left: 16%; width: 3px; height: 3px; background: #e879f9; box-shadow: 0 0 10px #e879f9; animation: rise 10s infinite 2.1s; }
-  .s3 { left: 26%; width: 5px; height: 5px; background: #fde047; box-shadow: 0 0 12px #fde047; animation: rise 9s infinite 4.2s; }
-  .s4 { left: 37%; width: 4px; height: 4px; background: #c084fc; box-shadow: 0 0 10px #c084fc; animation: rise 11s infinite 1.1s; }
-  .s5 { left: 48%; width: 3px; height: 3px; background: #fff; box-shadow: 0 0 9px #ffcc00; animation: rise 8.5s infinite 3.4s; }
-  .s6 { left: 59%; width: 5px; height: 5px; background: #ffcc00; box-shadow: 0 0 12px #ff8800; animation: rise 11.5s infinite 5.5s; }
-  .s7 { left: 70%; width: 4px; height: 4px; background: #f0abfc; box-shadow: 0 0 10px #f0abfc; animation: rise 9.2s infinite 0.8s; }
-  .s8 { left: 81%; width: 3px; height: 3px; background: #fde047; box-shadow: 0 0 9px #fde047; animation: rise 10.2s infinite 2.8s; }
-  .s9 { left: 91%; width: 5px; height: 5px; background: #a855f7; box-shadow: 0 0 12px #a855f7; animation: rise 10.8s infinite 4.8s; }
-  .s10 { left: 96%; width: 4px; height: 4px; background: #ffcc00; box-shadow: 0 0 10px #ffcc00; animation: rise 7.8s infinite 1.9s; }
-  @keyframes frameGlow { 0%, 100% { border-color: #9333ea; box-shadow: 0 10px 35px rgba(0,0,0,0.9), 0 0 25px rgba(168,85,247,0.55); } 50% { border-color: #f0abfc; box-shadow: 0 10px 40px rgba(0,0,0,0.95), 0 0 42px rgba(217,70,239,0.85), 0 0 20px rgba(255,204,0,0.45); } }
-  @keyframes shineSweep { 0% { left: -100%; } 35%, 100% { left: 150%; } }
-  .hero-container { width: 100%; max-width: 1080px; position: relative; z-index: 2; border-radius: 16px; overflow: hidden; border: 2.5px solid #a855f7; background: #0d0717; animation: frameGlow 4.5s infinite ease-in-out; }
-  .hero-container::after { content: ""; position: absolute; top: 0; left: -100%; width: 45%; height: 100%; background: linear-gradient(120deg, transparent, rgba(255,255,255,0.15), transparent); transform: skewX(-25deg); animation: shineSweep 7s infinite ease-in-out; pointer-events: none; }
-  .hero-container img { width: 100%; height: auto; display: block; }
-  .action-bar { width: 100%; max-width: 1080px; margin-top: 14px; position: relative; z-index: 2; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
-  .btn-catalog { background: linear-gradient(90deg, #581c87 0%, #9333ea 50%, #581c87 100%); color: #ffe680; border: 2px solid #ffcc00; border-radius: 10px; padding: 13px 26px; font-size: 15px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; box-shadow: 0 4px 18px rgba(147,51,234,0.55); transition: 0.2s; text-align: center; }
-  .btn-catalog:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 0 25px rgba(255,204,0,0.85); color: #fff; }
-  .btn-discord { background: linear-gradient(90deg, #1e2447 0%, #5865F2 50%, #1e2447 100%); color: #fff; border: 2px solid #8ea1e1; border-radius: 10px; padding: 13px 22px; font-size: 14px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 18px rgba(88,101,242,0.45); transition: 0.2s; }
-  .btn-discord:hover { transform: translateY(-2px); border-color: #ffcc00; }
-  @media (max-width: 640px) { body { padding: 10px; } .hero-container { border-radius: 10px; } .action-bar { flex-direction: column; } .btn-catalog, .btn-discord { width: 100%; font-size: 13.5px; } }
-
-  .trusted-box {
-    position: fixed;
-    top: 75px;
-    right: calc(50% + 540px + ((50vw - 540px) / 2));
-    transform: translateX(50%);
-    z-index: 95;
-    background: radial-gradient(circle at 50% 20%, #3b1c5e 0%, #120821 100%);
-    border: 2px solid #ffcc00;
-    border-radius: 12px;
-    padding: 10px 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 204, 0, 0.55);
-    text-align: center;
-    max-width: 195px;
-  }
-  .trusted-title {
-    color: #ffe680;
-    font-size: 12px;
-    font-weight: 900;
-    letter-spacing: 0.6px;
-    text-transform: uppercase;
-    text-shadow: 0 0 8px rgba(255, 204, 0, 0.7);
-  }
-  .trusted-box img {
-    width: 100%;
-    max-width: 165px;
-    height: auto;
-    border-radius: 8px;
-    display: block;
-  }
-  .flag-clean-wrap {
-    position: fixed;
-    top: 75px;
-    left: calc(50% + 540px + ((50vw - 540px) / 2));
-    transform: translateX(-50%);
-    z-index: 95;
-    background: #0d0717;
-    border: 2px solid #a855f7;
-    border-bottom: none;
-    border-radius: 10px 10px 0 0;
-    padding: 6px 6px 4px 6px;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.85), 0 0 14px rgba(168, 85, 247, 0.45);
-  }
-  .live-top-box {
-    position: fixed;
-    top: 354px;
-    left: calc(50% + 540px + ((50vw - 540px) / 2));
-    transform: translateX(-50%);
-    z-index: 96;
-    width: 112px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    background: #0d0717;
-    border: 2px solid #a855f7;
-    border-top: 1.5px solid #ffcc00;
-    border-radius: 0 0 10px 10px;
-    padding: 6px 8px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.85), 0 0 14px rgba(255, 204, 0, 0.4);
-  }
-  @media (max-width: 1520px) {
-    .trusted-box, .flag-clean-wrap, .live-top-box {
-      position: static;
-      transform: none;
-      margin: 12px auto;
-      border-radius: 10px;
-      border: 2px solid #a855f7;
-    }
-    .trusted-box { border-color: #ffcc00; }
-    .live-top-box { border-color: #ffcc00; }
-  }
-
+  .s1 { left: 10%; width: 4px; height: 4px; background: #ffcc00; box-shadow: 0 0 10px #ffcc00; animation: rise 8s infinite 0.5s; }
+  .s2 { left: 25%; width: 3px; height: 3px; background: #e879f9; box-shadow: 0 0 10px #e879f9; animation: rise 10s infinite 2.1s; }
+  .s3 { left: 45%; width: 5px; height: 5px; background: #fde047; box-shadow: 0 0 12px #fde047; animation: rise 9s infinite 4.2s; }
+  .s4 { left: 65%; width: 4px; height: 4px; background: #c084fc; box-shadow: 0 0 10px #c084fc; animation: rise 11s infinite 1.1s; }
+  .s5 { left: 85%; width: 4px; height: 4px; background: #ffcc00; box-shadow: 0 0 10px #ffcc00; animation: rise 8.5s infinite 3.4s; }
+  .container { width: 100%; max-width: 1080px; margin: 0 auto; position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
+  .bleach-top-nav { width: 100%; margin: 0 auto 14px auto; display: flex; justify-content: center; align-items: center; gap: 12px; }
+  .btn-nav-active { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(90deg, #581c87 0%, #9333ea 50%, #581c87 100%); color: #fff; border: 2px solid #ffcc00; border-radius: 10px; padding: 9px 24px; font-size: 13.5px; font-weight: 900; letter-spacing: 0.9px; text-transform: uppercase; text-decoration: none; box-shadow: 0 0 18px rgba(255, 204, 0, 0.65); }
+  .banner-box { width: 100%; border-radius: 14px; overflow: hidden; border: 2px solid #a855f7; background: #0d0717; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.9), 0 0 24px rgba(168, 85, 247, 0.5); }
+  .banner-box img { width: 100%; height: auto; display: block; }
+  .games-row { width: 100%; margin-top: 18px; display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+  .btn-game { background: linear-gradient(90deg, #581c87 0%, #9333ea 50%, #581c87 100%); color: #ffe680; border: 2px solid #ffcc00; border-radius: 10px; padding: 14px 28px; font-size: 15px; font-weight: 900; letter-spacing: 0.9px; text-transform: uppercase; text-decoration: none; box-shadow: 0 4px 18px rgba(147, 51, 234, 0.55); transition: 0.2s; text-align: center; }
+  .btn-game:hover { transform: translateY(-2px); box-shadow: 0 0 25px rgba(255, 204, 0, 0.85); color: #fff; }
+  .trusted-box { position: fixed; top: 15px; right: calc(50% + 540px + ((50vw - 540px) / 2)); transform: translateX(50%); z-index: 95; background: radial-gradient(circle at 50% 20%, #3b1c5e 0%, #120821 100%); border: 2px solid #ffcc00; border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; align-items: center; gap: 8px; box-shadow: 0 6px 24px rgba(0,0,0,0.9), 0 0 20px rgba(255,204,0,0.55); text-align: center; max-width: 195px; }
+  .trusted-title { color: #ffe680; font-size: 12px; font-weight: 900; letter-spacing: 0.6px; text-transform: uppercase; text-shadow: 0 0 8px rgba(255,204,0,0.7); }
+  .trusted-box img { width: 100%; max-width: 165px; height: auto; border-radius: 8px; display: block; }
+  .flag-clean-wrap { position: fixed; top: 15px; left: calc(50% + 540px + ((50vw - 540px) / 2)); transform: translateX(-50%); z-index: 95; background: #0d0717; border: 2px solid #a855f7; border-bottom: none; border-radius: 10px 10px 0 0; padding: 6px 6px 4px 6px; box-shadow: 0 4px 18px rgba(0,0,0,0.85), 0 0 14px rgba(168,85,247,0.45); }
+  .live-top-box { position: fixed; top: 294px; left: calc(50% + 540px + ((50vw - 540px) / 2)); transform: translateX(-50%); z-index: 96; width: 112px; display: flex; justify-content: center; align-items: center; gap: 5px; background: #0d0717; border: 2px solid #a855f7; border-top: 1.5px solid #ffcc00; border-radius: 0 0 10px 10px; padding: 6px 8px; box-shadow: 0 6px 18px rgba(0,0,0,0.85), 0 0 14px rgba(255,204,0,0.4); }
+  @media (max-width: 1520px) { .trusted-box, .flag-clean-wrap, .live-top-box { position: static; transform: none; margin: 12px auto; border-radius: 10px; border: 2px solid #a855f7; } .trusted-box, .live-top-box { border-color: #ffcc00; } }
+  @media (max-width: 640px) { .btn-game { width: 100%; font-size: 13.5px; padding: 12px 16px; } }
 </style>
 </head>
 <body>
-  <div class="cosmic-sky">
-    <div class="stars-bg"></div><div class="meteor m1"></div><div class="meteor m2"></div><div class="meteor m3"></div><div class="meteor m4"></div><div class="soul-aura"></div>
-    <div class="spark s1"></div><div class="spark s2"></div><div class="spark s3"></div><div class="spark s4"></div><div class="spark s5"></div>
-    <div class="spark s6"></div><div class="spark s7"></div><div class="spark s8"></div><div class="spark s9"></div><div class="spark s10"></div>
+  <div class="cosmic-sky"><div class="stars-bg"></div><div class="meteor m1"></div><div class="meteor m2"></div><div class="meteor m3"></div><div class="spark s1"></div><div class="spark s2"></div><div class="spark s3"></div><div class="spark s4"></div><div class="spark s5"></div></div>
+  <div class="container">
+    <div class="bleach-top-nav"><a href="https://github.io" class="btn-nav-active">🏠 Home • Genesis Gacha Store</a></div>
+    <div class="banner-box"><img src="home_config/home_banner.png" alt="Genesis Gacha Store"></div>
+    <div class="games-row"><a href="https://github.io" class="btn-game">⚔️ Bleach Soul Resonance APLUS Starter Accounts</a></div>
   </div>
-  <div class="hero-container"><img src="home_config/home_banner.png" alt="Genesis Gacha Store"></div>
-  <div class="action-bar">
-    <a href="https://genesisgachastore.github.io/Bleach-Soul-Resonance-APLUS-Starter-Accounts/" target="_top" class="btn-catalog">Bleach Soul Resonance APLUS Starter Accounts</a>
-    
-  </div>
-
-  <div class="trusted-box">
-    <div class="trusted-title">⭐ 100% Trusted Seller ⭐</div>
-    <a href="https://www.epicnpc.com/" target="_blank" rel="noopener">
-      <img src="home_config/epicnpc.png" alt="EpicNPC Trusted Seller">
-    </a>
-  </div>
-
-  <div class="flag-clean-wrap">
-    <a href="https://info.flagcounter.com/E57c"><img src="https://s01.flagcounter.com/count2/E57c/bg_000000/txt_FFFFFF/border_CCCCCC/columns_1/maxflags_10/viewers_0/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
-  </div>
-
-  <div class="live-top-box" title="Real-time visitors online">
-    <span style="display:inline-block; width:8px; height:8px; background:#22c55e; border-radius:50%; box-shadow:0 0 8px #22c55e;"></span>
-    <span style="font-size:12px; font-weight:bold; color:#ffe680;">LIVE:</span>
-    <script id="_waugen">var _wau = _wau || []; _wau.push(["small", "bleachcat26", "gen"]);</script>
-    <script async src="//waust.at/s.js"></script>
-  </div>
-
-  
-  
-  <!--Start of Tawk.to Script-->
+  <div class="trusted-box"><div class="trusted-title">⭐ 100% Trusted Seller ⭐</div><a href="https://epicnpc.com" target="_blank" rel="noopener"><img src="home_config/epicnpc.png" alt="EpicNPC Trusted Seller"></a></div>
+  <div class="flag-clean-wrap"><a href="https://flagcounter.com"><img src="https://flagcounter.com" alt="Flag Counter" border="0"></a></div>
+  <div class="live-top-box" title="Real-time visitors online"><span style="display:inline-block; width:8px; height:8px; background:#22c55e; border-radius:50%; box-shadow:0 0 8px #22c55e;"></span><span style="font-size:12px; font-weight:bold; color:#ffe680;">LIVE:</span><script id="_waugen">var _wau = _wau || []; _wau.push(["small", "bleachcat26", "gen"]);</script><script async src="//waust.at/s.js"></script></div>
   <script type="text/javascript">
   var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
   (function(){
@@ -169,6 +65,5 @@
   s0.parentNode.insertBefore(s1,s0);
   })();
   </script>
-  <!--End of Tawk.to Script-->
 </body>
 </html>
