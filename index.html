@@ -39,8 +39,8 @@
   .trusted-title { color: #ffe680; font-size: 12px; font-weight: 900; letter-spacing: 0.6px; text-transform: uppercase; text-shadow: 0 0 8px rgba(255,204,0,0.7); }
   .trusted-box img { width: 100%;  height: auto; border-radius: 8px; display: block; }
   .flag-clean-wrap { position: fixed; top: 15px; left: calc(50% + 540px + ((50vw - 540px) / 2)); transform: translateX(-50%); z-index: 95; background: #0d0717; border: 2px solid #a855f7; border-bottom: none; border-radius: 10px 10px 0 0; padding: 6px 6px 4px 6px; box-shadow: 0 4px 18px rgba(0,0,0,0.85), 0 0 14px rgba(168,85,247,0.45); }
-  .live-top-box { position: fixed; top: 294px; left: calc(50% + 540px + ((50vw - 540px) / 2)); transform: translateX(-50%); z-index: 96; width: 132px; padding: 7px 12px; gap: 7px; display: flex; justify-content: center; align-items: center; gap: 5px; background: #0d0717; border: 2px solid #a855f7; border-top: 1.5px solid #ffcc00; border-radius: 0 0 10px 10px; padding: 6px 8px; box-shadow: 0 6px 18px rgba(0,0,0,0.85), 0 0 14px rgba(255,204,0,0.4); }
-  @media (max-width: 1520px) { .trusted-box, .flag-clean-wrap, .live-top-box { position: static; transform: none; margin: 12px auto; border-radius: 10px; border: 2px solid #a855f7; } .trusted-box, .live-top-box { border-color: #ffcc00; } }
+  
+  @media (max-width: 1520px) { .trusted-box, .flag-clean-wrap,  .trusted-box,  }
   @media (max-width: 640px) { .btn-game { width: 100%; font-size: 13.5px; padding: 12px 16px; } }
 
   /* Kosmicke magline (Nebula) na bokovima i dnu */
@@ -191,21 +191,9 @@
     z-index: 95 !important;
     margin: 0 !important;
   }
-  .live-top-box {
-    position: fixed !important;
-    top: 294px !important;
-    left: calc(50% + 540px + ((100vw - 1080px) / 4)) !important;
-    transform: translateX(-50%) !important;
-    z-index: 96 !important;
-    width: 132px !important;
-    margin: 0 !important;
-  }
+  
   @media (max-width: 1280px) {
-    .trusted-box, .flag-clean-wrap, .live-top-box {
-      position: static !important;
-      transform: none !important;
-      margin: 12px auto !important;
-    }
+    .trusted-box, .flag-clean-wrap, 
   }
 
 
@@ -307,11 +295,7 @@
     transform: translateX(50%) !important;
     
   }
-.trusted-box, .flag-clean-wrap, .live-top-box {
-      position: static !important;
-      transform: none !important;
-      margin: 12px auto !important;
-    }
+.trusted-box, .flag-clean-wrap, 
   .trusted-box {
     position: fixed !important;
     top: 15px !important;
@@ -393,47 +377,14 @@
     left: calc(50% + 540px + ((100vw - 1080px) / 4)) !important;
     transform: translateX(-50%) !important;
   }
-.flag-clean-wrap, .live-top-box {
-      position: static !important;
-      transform: none !important;
-      margin: 12px auto !important;
-    }
-  .live-top-box {
-    position: fixed;
-    top: 294px;
-    left: calc(50% + 540px + ((50vw - 540px) / 2));
-    transform: translateX(-50%);
-    z-index: 96;
-    width: 132px; padding: 7px 12px; gap: 7px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    background: #0d0717;
-    border: 2px solid #a855f7;
-    border-top: 1.5px solid #ffcc00;
-    border-radius: 0 0 10px 10px;
-    padding: 6px 8px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.85), 0 0 14px rgba(255, 204, 0, 0.4);
-  }
-.live-top-box, .flag-clean-wrap {
+.flag-clean-wrap, .flag-clean-wrap {
       position: static;
       transform: none;
       margin: 16px auto;
       width: fit-content;
     }
-.live-top-box {
-    position: fixed !important;
-    top: 294px !important;
-    left: calc(50% + 540px + ((100vw - 1080px) / 4)) !important;
-    transform: translateX(-50%) !important;
-    width: 132px !important;
-  }
-.live-top-box {
-      position: static !important;
-      transform: none !important;
-      margin: 12px auto !important;
-    }
+
+
   .flag-clean-wrap {
     position: fixed !important;
     top: 15px !important;
@@ -442,20 +393,9 @@
     z-index: 95 !important;
     margin: 0 !important;
   }
-  .live-top-box {
-    position: fixed !important;
-    top: 294px !important;
-    left: calc(50% + 540px + ((100vw - 1080px) / 4)) !important;
-    transform: translateX(-50%) !important;
-    z-index: 96 !important;
-    margin: 0 !important;
-  }
+  
   @media (max-width: 1280px) {
-    .flag-clean-wrap, .live-top-box {
-      position: static !important;
-      transform: none !important;
-      margin: 12px auto !important;
-    }
+    .flag-clean-wrap, 
   }
 
 
@@ -596,6 +536,49 @@
     font-weight: 800;
   }
 
+
+  
+
+
+  /* VRACEN LIVE BROJAC ISPOD FLAG COUNTERA */
+  .flag-clean-wrap {
+    border-bottom: none !important;
+    border-radius: 10px 10px 0 0 !important;
+    padding: 6px 6px 4px 6px !important;
+  }
+  .live-top-box {
+    position: fixed !important;
+    top: 294px !important;
+    left: calc(50% + 540px + ((100vw - 1080px) / 4)) !important;
+    transform: translateX(-50%) !important;
+    z-index: 96 !important;
+    width: 132px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 7px !important;
+    background: #0d0717 !important;
+    border: 2px solid #a855f7 !important;
+    border-top: 1.5px solid #ffcc00 !important;
+    border-radius: 0 0 10px 10px !important;
+    padding: 7px 12px !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.85), 0 0 14px rgba(255, 204, 0, 0.4) !important;
+    margin: 0 !important;
+  }
+  @media (max-width: 1280px) {
+    .flag-clean-wrap {
+      border-bottom: 2px solid #a855f7 !important;
+      border-radius: 10px !important;
+    }
+    .live-top-box {
+      position: static !important;
+      transform: none !important;
+      margin: 12px auto !important;
+      border-top: 2px solid #ffcc00 !important;
+      border-radius: 10px !important;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -649,6 +632,13 @@
 
     <div class="flag-clean-wrap">
     <a href="https://info.flagcounter.com/E57c" target="_blank" rel="noopener"><img src="https://s01.flagcounter.com/count2/E57c/bg_000000/txt_FFFFFF/border_CCCCCC/columns_1/maxflags_10/viewers_0/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+  </div>
+
+  <div class="live-top-box" title="Real-time visitors online">
+    <span style="display:inline-block; width:8px; height:8px; background:#22c55e; border-radius:50%; box-shadow:0 0 8px #22c55e;"></span>
+    <span style="font-size:12px; font-weight:bold; color:#ffe680;">LIVE:</span>
+    <script id="_waugen">var _wau = _wau || []; _wau.push(["small", "bleachcat26", "gen"]);</script>
+    <script async src="//waust.at/s.js"></script>
   </div>
 
   <div class="live-top-box" title="Real-time visitors online">
