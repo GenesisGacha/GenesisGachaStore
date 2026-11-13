@@ -29,6 +29,41 @@
   .s5 { left: 85%; width: 4px; height: 4px; background: #ffcc00; box-shadow: 0 0 10px #ffcc00; animation: rise 8.5s infinite 3.4s; }
   .container { width: 100%; max-width: 1080px; margin: 0 auto; position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
   .bleach-top-nav { width: 100%; margin: 0 auto 14px auto; display: flex; justify-content: center; align-items: center; gap: 12px; }
+  /* CENTRALNI HOME MENI - prenesen sa originalne stranice */
+  .bleach-top-nav {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto 14px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+  }
+  .btn-back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(90deg, #1b0c30 0%, #581c87 50%, #1b0c30 100%);
+    color: #ffe680;
+    border: 2px solid #ffcc00;
+    border-radius: 10px;
+    padding: 9px 24px;
+    font-size: 13.5px;
+    font-weight: 900;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8), 0 0 14px rgba(168, 85, 247, 0.5);
+    transition: all 0.2s ease;
+  }
+  .btn-back-home:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(90deg, #581c87 0%, #9333ea 50%, #581c87 100%);
+    color: #ffffff;
+    box-shadow: 0 0 22px rgba(255, 204, 0, 0.85);
+  }
+
   .btn-nav-active { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(90deg, #581c87 0%, #9333ea 50%, #581c87 100%); color: #fff; border: 2px solid #ffcc00; border-radius: 10px; padding: 9px 24px; font-size: 13.5px; font-weight: 900; letter-spacing: 0.9px; text-transform: uppercase; text-decoration: none; box-shadow: 0 0 18px rgba(255, 204, 0, 0.65); }
   .banner-box { width: 100%; border-radius: 14px; overflow: hidden; border: 2px solid #a855f7; background: #0d0717; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.9), 0 0 24px rgba(168, 85, 247, 0.5); }
   .banner-box img { width: 100%; height: auto; display: block; }
@@ -40,7 +75,7 @@
   .trusted-box img { width: 100%;  height: auto; border-radius: 8px; display: block; }
   .flag-clean-wrap { position: fixed; top: 15px; left: calc(50% + 540px + ((50vw - 540px) / 2)); transform: translateX(-50%); z-index: 95; background: #0d0717; border: 2px solid #a855f7; border-bottom: none; border-radius: 10px 10px 0 0; padding: 6px 6px 4px 6px; box-shadow: 0 4px 18px rgba(0,0,0,0.85), 0 0 14px rgba(168,85,247,0.45); }
   
-  @media (max-width: 1520px) { .trusted-box, .flag-clean-wrap,  .trusted-box,  }
+  /* Removed an incomplete legacy media query. */
   @media (max-width: 640px) { .btn-game { width: 100%; font-size: 13.5px; padding: 12px 16px; } }
 
   /* Kosmicke magline (Nebula) na bokovima i dnu */
@@ -192,9 +227,7 @@
     margin: 0 !important;
   }
   
-  @media (max-width: 1280px) {
-    .trusted-box, .flag-clean-wrap, 
-  }
+  /* Removed an incomplete legacy media query. */
 
 
   
@@ -394,9 +427,7 @@
     margin: 0 !important;
   }
   
-  @media (max-width: 1280px) {
-    .flag-clean-wrap, 
-  }
+  /* Removed an incomplete legacy media query. */
 
 
   /* UREDAN PRIKAZ KATALOGA U 2 STUPCA NA HOME STRANICI */
@@ -750,6 +781,52 @@
 
 
 
+  /* HOW TO BUY: precizno uskladjeno s originalnom stranicom */
+  .left-side-row .howtobuy-box {
+    width: 195px !important;
+    max-width: 195px !important;
+    flex: 0 0 195px !important;
+    padding: 10px 10px 8px 10px !important;
+    margin-top: 2px !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+  }
+  .left-side-row .howtobuy-header {
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.8px !important;
+    padding-bottom: 6px !important;
+    margin-bottom: 8px !important;
+    text-shadow: 0 0 8px rgba(255, 204, 0, 0.6) !important;
+  }
+  .left-side-row .htb-step {
+    gap: 7px !important;
+    margin-bottom: 7px !important;
+    padding: 5px 6px !important;
+  }
+  .left-side-row .htb-num {
+    min-width: 18px !important;
+    width: 18px !important;
+    height: 18px !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 900 !important;
+    margin-top: 1px !important;
+    box-shadow: 0 0 6px rgba(255, 204, 0, 0.7) !important;
+  }
+  .left-side-row .htb-txt {
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 10.5px !important;
+    line-height: 1.28 !important;
+    color: #f3e8ff !important;
+  }
+  .left-side-row .htb-txt b {
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 11px !important;
+    font-weight: bold !important;
+    margin-bottom: 1px !important;
+  }
+
   /* TACNA MATEMATIKA OD RUBA DO BANERA */
   .left-upgrade-wrap {
     position: fixed !important;
@@ -833,7 +910,196 @@
     }
   }
 
+
+
+  /* PRENESENA ZAJEDNICKA LIJEVA STRANA: EPICNPC + HOW TO BUY */
+  .left-side-row {
+    position: fixed !important;
+    top: 15px !important;
+    left: 15px !important;
+    z-index: 999 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    margin: 0 !important;
+  }
+  .left-side-row .epicnpc-wrapper {
+    position: static !important;
+    transform: none !important;
+    margin: 0 !important;
+    width: 175px !important;
+    flex: 0 0 175px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  .left-side-row .epicnpc-wrapper .trusted-box {
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+  .left-side-row .epicnpc-wrapper img {
+    display: block !important;
+    width: 175px !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  .left-side-row .howtobuy-box {
+    position: static !important;
+    transform: none !important;
+    margin: 0 !important;
+    width: 175px !important;
+    max-width: 175px !important;
+    flex: 0 0 175px !important;
+    background: linear-gradient(180deg, #160929 0%, #0d0717 100%) !important;
+    border: 2px solid #ffcc00 !important;
+    border-radius: 12px !important;
+    padding: 8px 8px 6px 8px !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.9), 0 0 15px rgba(168, 85, 247, 0.45) !important;
+    box-sizing: border-box !important;
+    text-align: left !important;
+  }
+  .left-side-row .howtobuy-header {
+    text-align: center !important;
+    font-size: 12px !important;
+    font-weight: 900 !important;
+    color: #ffe680 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.8px !important;
+    padding-bottom: 6px !important;
+    margin-bottom: 8px !important;
+    border-bottom: 1.5px solid rgba(255, 204, 0, 0.4) !important;
+    text-shadow: 0 0 8px rgba(255, 204, 0, 0.6) !important;
+  }
+  .left-side-row .htb-step {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 7px !important;
+    margin-bottom: 5px !important;
+    background: rgba(88, 28, 135, 0.25) !important;
+    border: 1px solid rgba(168, 85, 247, 0.35) !important;
+    border-radius: 7px !important;
+    padding: 4px 5px !important;
+  }
+  .left-side-row .htb-step:last-child { margin-bottom: 0 !important; }
+  .left-side-row .htb-num {
+    min-width: 18px !important;
+    height: 18px !important;
+    background: linear-gradient(135deg, #ffcc00 0%, #f59e0b 100%) !important;
+    color: #0d0717 !important;
+    font-size: 11px !important;
+    font-weight: 900 !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-top: 1px !important;
+    flex-shrink: 0 !important;
+  }
+  .left-side-row .htb-txt {
+    font-size: 10px !important;
+    line-height: 1.22 !important;
+    color: #f3e8ff !important;
+  }
+  .left-side-row .htb-txt b {
+    color: #ffe680 !important;
+    display: block !important;
+    font-size: 10.5px !important;
+    margin-bottom: 1px !important;
+  }
+  @media (max-width: 1620px) {
+    .left-side-row {
+      position: static !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+      width: 100% !important;
+      max-width: 1080px !important;
+      margin: 12px auto !important;
+    }
+    .left-side-row .howtobuy-box {
+      width: 100% !important;
+      max-width: 680px !important;
+      flex: 1 1 100% !important;
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 8px !important;
+    }
+    .left-side-row .howtobuy-header {
+      grid-column: 1 / -1 !important;
+      margin-bottom: 2px !important;
+    }
+    .left-side-row .htb-step { margin-bottom: 0 !important; }
+  }
+  @media (max-width: 760px) {
+    .left-side-row .howtobuy-box {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+
+  /* Poravnanje centralnog menija */
+  .bleach-top-nav { width: 100% !important; max-width: 1080px !important; margin: 0 auto 14px auto !important; justify-content: center !important; }
+  .bleach-top-nav .btn-back-home { box-sizing: border-box; line-height: 1.2; }
 </style>
+
+
+<style id="how-to-buy-final-cleanup">
+  /* How to Buy — dimenzije i tipografija usklađene s originalnom stranicom */
+  .left-side-row .howtobuy-box {
+    position: static !important; transform: none !important; margin: 0 !important;
+    width: 175px !important; max-width: 175px !important; flex: 0 0 175px !important;
+    background: linear-gradient(180deg, #160929 0%, #0d0717 100%) !important;
+    border: 2px solid #ffcc00 !important; border-radius: 12px !important;
+    padding: 8px 8px 6px !important;
+    box-shadow: 0 6px 20px rgba(0,0,0,.9), 0 0 15px rgba(168,85,247,.45) !important;
+    box-sizing: border-box !important; text-align: left !important;
+    font-family: Arial, sans-serif !important;
+  }
+  .left-side-row .howtobuy-header {
+    text-align: center !important; font: 900 12px Arial, sans-serif !important;
+    color: #ffe680 !important; text-transform: uppercase !important; letter-spacing: .8px !important;
+    padding-bottom: 6px !important; margin-bottom: 8px !important;
+    border-bottom: 1.5px solid rgba(255,204,0,.4) !important;
+    text-shadow: 0 0 8px rgba(255,204,0,.6) !important;
+  }
+  .left-side-row .htb-step {
+    display: flex !important; align-items: flex-start !important; gap: 7px !important;
+    margin-bottom: 5px !important; background: rgba(88,28,135,.25) !important;
+    border: 1px solid rgba(168,85,247,.35) !important; border-radius: 7px !important;
+    padding: 4px 5px !important; font-family: Arial, sans-serif !important;
+  }
+  .left-side-row .htb-step:last-child { margin-bottom: 0 !important; }
+  .left-side-row .htb-num {
+    min-width: 18px !important; width: 18px !important; height: 18px !important;
+    display: flex !important; align-items: center !important; justify-content: center !important;
+    flex-shrink: 0 !important; margin-top: 1px !important; border-radius: 50% !important;
+    background: linear-gradient(135deg,#ffcc00 0%,#f59e0b 100%) !important;
+    color: #0d0717 !important; font: 900 11px Arial, sans-serif !important;
+    box-shadow: 0 0 6px rgba(255,204,0,.7) !important;
+  }
+  .left-side-row .htb-txt {
+    font: 10px/1.22 Arial, sans-serif !important; color: #f3e8ff !important;
+  }
+  .left-side-row .htb-txt b {
+    display: block !important; color: #ffe680 !important;
+    font: bold 10.5px Arial, sans-serif !important; margin-bottom: 1px !important;
+  }
+  @media (max-width: 1620px) {
+    .left-side-row .howtobuy-box {
+      width: 100% !important; max-width: 680px !important; flex: 1 1 100% !important;
+      display: grid !important; grid-template-columns: repeat(3,minmax(0,1fr)) !important; gap: 8px !important;
+    }
+    .left-side-row .howtobuy-header { grid-column: 1 / -1 !important; margin-bottom: 2px !important; }
+    .left-side-row .htb-step { margin-bottom: 0 !important; }
+  }
+  @media (max-width: 760px) {
+    .left-side-row .howtobuy-box { grid-template-columns: 1fr !important; }
+  }
+</style>
+
 </head>
 <body>
   <div class="cosmic-sky">
@@ -850,7 +1116,7 @@
   </div>
 
   <div class="container">
-    <div class="bleach-top-nav"><a href="https://genesisgachastore.github.io/home/" class="btn-nav-active">🏠 Home • Genesis Gacha Store</a></div>
+    <div class="bleach-top-nav"><a href="https://genesisgachastore.github.io/home/" class="btn-back-home">🏠 Home • Genesis Gacha Store</a></div>
     <div class="banner-box"><img src="slike/home_banner.png" alt="Genesis Gacha Store"></div>
 
     <div class="info-bar">
@@ -883,13 +1149,20 @@
         </div>
       </div>
     </div>
-  <div class="trusted-box left-upgrade-wrap" style="background:none !important; border:none !important; box-shadow:none !important; padding:0 !important; width:auto !important;">
-  <div class="trusted-box" style="position:static !important; transform:none !important; margin:0 !important;">
-    <div class="trusted-text">⭐ 100% Trusted Seller ⭐</div><a href="https://epicnpc.com" target="_blank" rel="noopener"><a href="https://www.epicnpc.com/members/genesisgacha.1199111/" target="_blank" rel="noopener" class="btn-epicnpc-topic">&#128293; Click Here for EpicNPC Profile</a>
-    <img src="slike/epicnpc.png" alt="EpicNPC Trusted Seller"></a></div>
+  <div class="left-side-row">
+  <div class="epicnpc-wrapper">
+    <div class="trusted-box">
+      <div class="trusted-text">⭐ 100% Trusted Seller ⭐</div>
+      <a href="https://www.epicnpc.com/members/genesisgacha.1199111/" target="_blank" rel="noopener" class="btn-epicnpc-topic">&#128293; Click Here for EpicNPC Profile</a>
+    </div>
+    <img src="slike/epicnpc.png" alt="EpicNPC Trusted Seller">
+  </div>
   <div class="howtobuy-box">
-    <div class="howtobuy-header">&#128722; How to Buy</div>
-    <div class="htb-step"><span class="htb-num">1</span><div class="htb-txt"><b>Pick Account</b>Select your favorite Account #.</div></div>
+      <div class="howtobuy-header">&#128722; How to Buy</div>
+      <div class="htb-step">
+        <span class="htb-num">1</span>
+        <div class="htb-txt"><b>Pick Account</b>Select your favorite Account #.</div>
+      </div>
     <div class="htb-step"><span class="htb-num">2</span><div class="htb-txt"><b>Add on Discord</b>Message me with the Account #.</div></div>
     <div class="htb-step"><span class="htb-num">3</span><div class="htb-txt"><b>Live Account Check</b>I will log back into the account so we can confirm it's the exact one you want.</div></div>
     <div class="htb-step"><span class="htb-num">4</span><div class="htb-txt"><b>Easy Payment</b>Pay via PayPal or Steam Gift.</div></div>
@@ -897,13 +1170,8 @@
     <div class="htb-step"><span class="htb-num">6</span><div class="htb-txt"><b>100% Yours</b>Account is 100% yours &mdash; change the password and do whatever you want!</div></div>
   </div>
 </div>
-  
-  
-  
 
-    
-
-    <div class="flag-clean-wrap">
+  <div class="flag-clean-wrap">
     <a href="https://info.flagcounter.com/E57c" target="_blank" rel="noopener"><img src="https://s01.flagcounter.com/count2/E57c/bg_000000/txt_FFFFFF/border_CCCCCC/columns_1/maxflags_10/viewers_0/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
   </div>
 
