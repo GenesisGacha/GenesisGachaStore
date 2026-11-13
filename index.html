@@ -1122,6 +1122,113 @@
       position: static !important;
     }
   }
+
+
+  /* USKLADJEN HOW TO BUY FONT I STIL */
+  .howtobuy-box, .howtobuy-box * {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+  .howtobuy-box {
+    width: 100%;
+    max-width: 195px;
+    background: linear-gradient(180deg, #160929 0%, #0d0717 100%);
+    border: 2px solid #ffcc00;
+    border-radius: 12px;
+    padding: 10px 10px 8px 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.9), 0 0 15px rgba(168, 85, 247, 0.45);
+    box-sizing: border-box;
+    margin-top: 2px;
+    text-align: left;
+  }
+  .howtobuy-header {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 900;
+    color: #ffe680;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+    border-bottom: 1.5px solid rgba(255, 204, 0, 0.4);
+    text-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
+  }
+  .htb-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    margin-bottom: 7px;
+    background: rgba(88, 28, 135, 0.25);
+    border: 1px solid rgba(168, 85, 247, 0.35);
+    border-radius: 7px;
+    padding: 5px 6px;
+  }
+  .htb-step:last-child {
+    margin-bottom: 0;
+  }
+  .htb-num {
+    min-width: 18px;
+    height: 18px;
+    background: linear-gradient(135deg, #ffcc00 0%, #f59e0b 100%);
+    color: #0d0717;
+    font-size: 11px;
+    font-weight: 900;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    box-shadow: 0 0 6px rgba(255, 204, 0, 0.7);
+  }
+  .htb-txt {
+    font-size: 10.5px;
+    line-height: 1.28;
+    color: #f3e8ff;
+  }
+  .htb-txt b {
+    color: #ffe680;
+    display: block;
+    font-size: 11px;
+    margin-bottom: 1px;
+  }
+  .howtobuy-box {
+    position: static !important;
+    transform: none !important;
+    margin: 0 !important;
+    width: 175px !important;
+    max-width: 175px !important;
+    flex-shrink: 0 !important;
+    background: linear-gradient(180deg, #160929 0%, #0d0717 100%) !important;
+    border: 2px solid #ffcc00 !important;
+    border-radius: 12px !important;
+    padding: 8px 8px 6px 8px !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.9), 0 0 15px rgba(168, 85, 247, 0.45) !important;
+  }
+  .htb-step {
+    padding: 4px 5px !important;
+    margin-bottom: 5px !important;
+  }
+  .htb-txt {
+    font-size: 10px !important;
+    line-height: 1.22 !important;
+  }
+  .howtobuy-box {
+      width: 100% !important;
+      max-width: 680px !important;
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 8px !important;
+    }
+  .howtobuy-header {
+      grid-column: 1 / -1 !important;
+      margin-bottom: 2px !important;
+    }
+  .htb-step {
+      margin-bottom: 0 !important;
+    }
+  .howtobuy-box {
+      grid-template-columns: 1fr !important;
+    }
+
 </style>
 
 
@@ -1462,7 +1569,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var noviLink = lijeviLink ? lijeviLink.cloneNode(true) : document.createElement('a');
     var url = 'https://genesisgachastore.github.io/Bleach-Mirrors-High-EU-Starter-Accounts-/';
     noviLink.href = url;
-    noviLink.textContent = '? Starter Accounts with Characters';
+    noviLink.innerHTML = '&#9876;&#65039; Starter Accounts with Characters';
     noviLink.style.setProperty('width', '100%', 'important');
     noviLink.style.setProperty('box-sizing', 'border-box', 'important');
     noviLink.style.setProperty('white-space', 'normal', 'important');
