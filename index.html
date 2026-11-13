@@ -1229,6 +1229,37 @@
       grid-template-columns: 1fr !important;
     }
 
+
+
+  /* FIX RAZMAKA NA MOBITELU ZA TWO-GAMES-ROW */
+  @media (max-width: 768px) {
+    .two-games-row {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      gap: 12px !important;
+      height: auto !important;
+      min-height: 0 !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+    }
+    .two-games-row > div {
+      height: auto !important;
+      min-height: 0 !important;
+      max-height: none !important;
+      flex: 0 0 auto !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+    }
+    .two-games-row > div > div:not(:first-child) {
+      position: static !important;
+      margin-top: 8px !important;
+      margin-bottom: 0 !important;
+      height: auto !important;
+    }
+  }
+
 </style>
 
 
