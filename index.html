@@ -1041,6 +1041,63 @@
   /* Poravnanje centralnog menija */
   .bleach-top-nav { width: 100% !important; max-width: 1080px !important; margin: 0 auto 14px auto !important; justify-content: center !important; }
   .bleach-top-nav .btn-back-home { box-sizing: border-box; line-height: 1.2; }
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  .two-games-row {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    gap: 18px !important;
+    width: auto !important;
+    max-width: 100% !important;
+  }
+  .two-games-row > div {
+    width: 245px !important;
+    min-width: 245px !important;
+    max-width: 245px !important;
+    flex: 0 0 245px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    box-sizing: border-box !important;
+  }
+  .two-games-row > div > div:first-child {
+    width: 245px !important;
+    min-width: 245px !important;
+    max-width: 245px !important;
+    min-height: 74px !important;
+    height: 74px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+  }
+  .two-games-row > div > div:not(:first-child) {
+    width: 245px !important;
+    min-width: 245px !important;
+    max-width: 245px !important;
+    margin-top: 10px !important;
+    box-sizing: border-box !important;
+  }
+
 </style>
 
 
@@ -1135,7 +1192,8 @@
       <div class="selling-line right"></div>
     </div>
 
-    <div class="games-row">
+    <div class="two-games-row">
+<div class="games-row">
       <div class="game-dropdown-wrap" id="bleachDropdown">
         <button type="button" class="btn-game-main" onclick="document.getElementById('bleachDropdown').classList.toggle('open')">
           <span>&#128293; Bleach Soul Resonance APLUS</span>
@@ -1146,7 +1204,23 @@
           <a href="https://genesisgachastore.github.io/Bleach-Soul-Resonance-APLUS-Jade-Accounts/" class="btn-sub-item">&#128142; Starter Accounts with Only Jades</a>
         </div>
       </div>
+    
     </div>
+<div class="games-row">
+      <div class="game-dropdown-wrap" id="bmh_bleachDropdown">
+        <button type="button" class="btn-game-main" onclick="toggleBmhBox(this)">
+          <span>&#128293; Bleach Mirrors High EU</span>
+          <span class="game-arrow">&#9660;</span>
+        </button>
+        <div class="game-submenu">
+          
+        </div>
+      </div>
+    
+    </div>
+</div>
+
+
   <div class="left-side-row">
   <div class="epicnpc-wrapper">
     <div class="trusted-box">
@@ -1263,5 +1337,154 @@
   }
 </style>
 
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.game-header, .catalog-header, .accordion-header, .dropdown-header').forEach(function(hdr) {
+    if (!hdr.dataset.bound) {
+      hdr.dataset.bound = '1';
+      hdr.addEventListener('click', function() {
+        var parent = hdr.parentElement;
+        if (parent) parent.classList.toggle('open');
+      });
+    }
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var sviDivovi = Array.from(document.querySelectorAll('.two-games-row > div'));
+  var desnaKartica = sviDivovi.find(function(el) { return el.textContent.indexOf('Bleach Mirrors High') !== -1; });
+  if (!desnaKartica) return;
+
+  var lijeviLink = Array.from(document.querySelectorAll('a')).find(function(a) {
+    return a.textContent.indexOf('Starter Accounts with Characters') !== -1;
+  });
+
+  var stupac = document.createElement('div');
+  stupac.style.setProperty('display', 'inline-flex', 'important');
+  stupac.style.setProperty('flex-direction', 'column', 'important');
+  stupac.style.setProperty('align-items', 'flex-start', 'important');
+
+  desnaKartica.parentNode.insertBefore(stupac, desnaKartica);
+  stupac.appendChild(desnaKartica);
+
+  var noviMeni = document.createElement('div');
+  if (lijeviLink && lijeviLink.parentElement) {
+    noviMeni.className = lijeviLink.parentElement.className;
+  }
+  noviMeni.style.setProperty('display', 'none', 'important');
+  noviMeni.style.setProperty('margin-top', '10px', 'important');
+  noviMeni.style.setProperty('box-sizing', 'border-box', 'important');
+  noviMeni.style.setProperty('min-width', '0', 'important');
+
+  var noviLink = lijeviLink ? lijeviLink.cloneNode(true) : document.createElement('a');
+  noviLink.href = 'https://genesisgachastore.github.io/Bleach-Mirrors-High-EU-Starter-Accounts-/';
+  noviLink.onclick = function(e) { e.stopPropagation(); window.location.href = 'https://genesisgachastore.github.io/Bleach-Mirrors-High-EU-Starter-Accounts-/'; };
+  noviLink.style.setProperty('width', '100%', 'important');
+  noviLink.style.setProperty('min-width', '0', 'important');
+  noviLink.style.setProperty('box-sizing', 'border-box', 'important');
+  noviLink.style.setProperty('white-space', 'normal', 'important');
+  noviMeni.appendChild(noviLink);
+
+  stupac.appendChild(noviMeni);
+
+  desnaKartica.style.cursor = 'pointer';
+  desnaKartica.onclick = function(e) {
+    if (e.target.tagName === 'A') return;
+    e.preventDefault();
+    e.stopPropagation();
+    var otvoren = noviMeni.style.display !== 'none';
+    if (!otvoren) {
+      var lijevaKutija = lijeviLink ? lijeviLink.parentElement : null;
+      var lijevaSirina = lijevaKutija ? Math.round(lijevaKutija.getBoundingClientRect().width) : 0;
+      var ciljnaSirina = 245;
+      noviMeni.style.setProperty('width', ciljnaSirina + 'px', 'important');
+      noviMeni.style.setProperty('max-width', ciljnaSirina + 'px', 'important');
+      noviMeni.style.setProperty('display', 'flex', 'important');
+    } else {
+      noviMeni.style.setProperty('display', 'none', 'important');
+    }
+    var strelica = desnaKartica.querySelector('.arrow, span:last-child');
+    if (strelica) {
+      strelica.style.display = 'inline-block';
+      strelica.style.transition = 'transform 0.2s ease';
+      strelica.style.transform = otvoren ? 'rotate(0deg)' : 'rotate(180deg)';
+    }
+  };
+});
+</script>
+
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var row = document.querySelector('.two-games-row');
+  if (!row) return;
+
+  var jadesLink = Array.from(document.querySelectorAll('a')).find(function(a) {
+    return a.textContent.indexOf('Only Jades') !== -1;
+  });
+  var lijeviPadajuci = jadesLink ? jadesLink.parentElement : null;
+  var bsrHeader = Array.from(row.querySelectorAll('div')).find(function(el) {
+    return el.textContent.indexOf('Bleach Soul Resonance') !== -1 && el.children.length > 0 && el.offsetHeight < 120;
+  });
+
+  if (bsrHeader && lijeviPadajuci) {
+    var lijeviStupac = document.createElement('div');
+    lijeviStupac.style.setProperty('display', 'inline-flex', 'important');
+    lijeviStupac.style.setProperty('flex-direction', 'column', 'important');
+    lijeviStupac.style.setProperty('align-items', 'flex-start', 'important');
+    lijeviStupac.style.setProperty('width', '245px', 'important');
+
+    row.insertBefore(lijeviStupac, row.firstChild);
+    lijeviStupac.appendChild(bsrHeader);
+    lijeviStupac.appendChild(lijeviPadajuci);
+
+    bsrHeader.style.setProperty('width', '245px', 'important');
+    bsrHeader.style.setProperty('height', '74px', 'important');
+    bsrHeader.style.setProperty('box-sizing', 'border-box', 'important');
+
+    lijeviPadajuci.style.setProperty('width', '245px', 'important');
+    lijeviPadajuci.style.setProperty('max-width', '245px', 'important');
+    lijeviPadajuci.style.setProperty('margin-top', '10px', 'important');
+    lijeviPadajuci.style.setProperty('box-sizing', 'border-box', 'important');
+    lijeviPadajuci.style.setProperty('display', 'none', 'important');
+
+    // Klik direktno otvara/zatvara lijevi padajuci okvir tacno ispod zaglavlja
+    bsrHeader.addEventListener('click', function(e) {
+      if (e.target.tagName === 'A') return;
+      var jeSkriven = (lijeviPadajuci.style.display === 'none');
+      lijeviPadajuci.style.setProperty('display', jeSkriven ? 'flex' : 'none', 'important');
+      lijeviPadajuci.style.setProperty('flex-direction', 'column', 'important');
+    });
+  }
+});
+</script>
 </body>
 </html>
