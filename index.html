@@ -1100,21 +1100,41 @@
 
 
 
+  
+
+
+
   @media (max-width: 768px) {
     .two-games-row {
       display: flex !important;
       flex-direction: column !important;
       align-items: center !important;
-      justify-content: center !important;
+      justify-content: flex-start !important;
       width: 100% !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-      gap: 14px !important;
+      height: auto !important;
+      min-height: 0 !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+      gap: 12px !important;
     }
     .two-games-row > div {
-      margin-left: auto !important;
-      margin-right: auto !important;
+      width: 245px !important;
+      min-width: 245px !important;
+      max-width: 245px !important;
+      height: auto !important;
+      min-height: 0 !important;
+      flex: 0 0 auto !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
       align-items: center !important;
+    }
+    .two-games-row > div > div:first-child {
+      margin-bottom: 0 !important;
+    }
+    .two-games-row > div > div:not(:first-child) {
+      margin-top: 8px !important;
+      margin-bottom: 4px !important;
+      position: static !important;
     }
   }
 
