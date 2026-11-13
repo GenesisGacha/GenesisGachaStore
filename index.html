@@ -590,6 +590,81 @@
     display: block !important;
   }
 
+
+
+  /* GLAVNI TAB I PADAJUCI SUB-MENU ZA KATALOGE */
+  .game-dropdown-wrap {
+    width: 100%;
+    max-width: 580px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .btn-game-main {
+    width: 100%;
+    padding: 16px 22px;
+    background: linear-gradient(90deg, #241042 0%, #581c87 50%, #241042 100%);
+    color: #ffe680;
+    border: 2px solid #ffcc00;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.85), 0 0 16px rgba(168, 85, 247, 0.55);
+    transition: all 0.2s ease;
+  }
+  .btn-game-main:hover {
+    background: linear-gradient(90deg, #3b176e 0%, #7e22ce 50%, #3b176e 100%);
+    color: #ffffff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.95), 0 0 24px rgba(255, 204, 0, 0.85);
+  }
+  .game-arrow {
+    font-size: 14px;
+    transition: transform 0.25s ease;
+    color: #ffcc00;
+  }
+  .game-dropdown-wrap.open .game-arrow {
+    transform: rotate(180deg);
+  }
+  .game-submenu {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 12px;
+    background: rgba(13, 7, 23, 0.96);
+    border: 2px solid #a855f7;
+    border-radius: 12px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.95), 0 0 18px rgba(168, 85, 247, 0.5);
+  }
+  .game-dropdown-wrap.open .game-submenu {
+    display: flex;
+  }
+  .btn-sub-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 18px;
+    background: linear-gradient(90deg, #1b0c30 0%, #3b176e 100%);
+    color: #ffe680 !important;
+    border: 1.5px solid #ffcc00;
+    border-radius: 9px;
+    font-size: 14.5px;
+    font-weight: 800;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+  }
+  .btn-sub-item:hover {
+    background: linear-gradient(90deg, #581c87 0%, #9333ea 100%);
+    color: #ffffff !important;
+    box-shadow: 0 0 16px rgba(255, 204, 0, 0.8);
+    transform: translateY(-1px);
+  }
+
 </style>
 </head>
 <body>
@@ -628,11 +703,18 @@
       <div class="selling-line right"></div>
     </div>
 
-    <div class="games-row">
-      <a href="https://genesisgachastore.github.io/Bleach-Soul-Resonance-APLUS-Starter-Accounts/" class="btn-game">⚔️ Bleach Soul Resonance APLUS Starter Accounts</a>
-      <a href="https://genesisgachastore.github.io/Bleach-Soul-Resonance-APLUS-Jade-Accounts/" class="btn-game">💎 Bleach Soul Resonance APLUS Jade Accounts</a>
+    <div class="games-row" style="display:block !important;">
+      <div class="game-dropdown-wrap" id="bleachDropdown">
+        <button type="button" class="btn-game-main" onclick="document.getElementById('bleachDropdown').classList.toggle('open')">
+          <span>&#128293; Bleach Soul Resonance APLUS</span>
+          <span class="game-arrow">&#9660;</span>
+        </button>
+        <div class="game-submenu">
+          <a href="https://genesisgachastore.github.io/Bleach-Soul-Resonance-APLUS-Starter-Accounts/" class="btn-sub-item">&#9876;&#65039; Starter Accounts with Characters</a>
+          <a href="https://genesisgachastore.github.io/Bleach-Soul-Resonance-APLUS-Jade-Accounts/" class="btn-sub-item">&#128142; Starter Accounts with Only Jades</a>
+        </div>
+      </div>
     </div>
-  </div>
   <div class="trusted-box">
     <div class="trusted-text">⭐ 100% Trusted Seller ⭐</div><a href="https://epicnpc.com" target="_blank" rel="noopener"><img src="home_config/epicnpc.png" alt="EpicNPC Trusted Seller"></a></div>
   
