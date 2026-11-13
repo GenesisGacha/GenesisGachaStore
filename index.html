@@ -12,10 +12,8 @@
   }
   body { background-color: #08070a; color: #fff; min-height: 100vh; padding: 15px 16px 40px 16px; display: flex; flex-direction: column; align-items: center; overflow-x: hidden; position: relative; animation: bgBreathe 7s infinite ease-in-out; }
   .cosmic-sky { position: fixed; inset: 0; pointer-events: none; z-index: 1; overflow: hidden; }
-  @keyframes twinkle { 0%, 100% { opacity: 0.35; } 50% { opacity: 1; } }
-  .stars-bg { position: absolute; inset: 0; background-image: radial-gradient(1.5px 1.5px at 8% 15%, #fff, transparent), radial-gradient(2px 2px at 18% 68%, #e879f9, transparent), radial-gradient(1.5px 1.5px at 31% 25%, #fde047, transparent), radial-gradient(2px 2px at 47% 12%, #c084fc, transparent), radial-gradient(1.5px 1.5px at 62% 78%, #fff, transparent), radial-gradient(2px 2px at 76% 22%, #ffcc00, transparent), radial-gradient(1.5px 1.5px at 88% 62%, #d8b4fe, transparent), radial-gradient(2px 2px at 94% 35%, #f0abfc, transparent); animation: twinkle 4.5s infinite ease-in-out; }
-  @keyframes shootingStar { 0% { transform: translate(0, 0) rotate(-35deg); opacity: 0; } 4% { opacity: 1; } 18% { transform: translate(-1100px, 750px) rotate(-35deg); opacity: 0; } 100% { transform: translate(-1100px, 750px) rotate(-35deg); opacity: 0; } }
-  .meteor { position: absolute; width: 135px; height: 2px; background: linear-gradient(90deg, #fff 0%, #ffcc00 35%, #a855f7 75%, transparent 100%); border-radius: 50%; filter: drop-shadow(0 0 6px #ffcc00); opacity: 0; }
+.stars-bg { position: absolute; inset: 0; background-image: radial-gradient(1.5px 1.5px at 8% 15%, #fff, transparent), radial-gradient(2px 2px at 18% 68%, #e879f9, transparent), radial-gradient(1.5px 1.5px at 31% 25%, #fde047, transparent), radial-gradient(2px 2px at 47% 12%, #c084fc, transparent), radial-gradient(1.5px 1.5px at 62% 78%, #fff, transparent), radial-gradient(2px 2px at 76% 22%, #ffcc00, transparent), radial-gradient(1.5px 1.5px at 88% 62%, #d8b4fe, transparent), radial-gradient(2px 2px at 94% 35%, #f0abfc, transparent); animation: twinkle 4.5s infinite ease-in-out; }
+.meteor { position: absolute; width: 135px; height: 2px; background: linear-gradient(90deg, #fff 0%, #ffcc00 35%, #a855f7 75%, transparent 100%); border-radius: 50%; filter: drop-shadow(0 0 6px #ffcc00); opacity: 0; }
   .meteor::before { content: ""; position: absolute; left: 0; top: -2px; width: 6px; height: 6px; border-radius: 50%; background: #fff; box-shadow: 0 0 12px #fff, 0 0 20px #ffcc00; }
   .m1 { top: 5%; left: 95%; animation: shootingStar 7s infinite linear 0.8s; }
   .m2 { top: 24%; left: 105%; animation: shootingStar 10s infinite linear 3.5s; }
@@ -1137,7 +1135,7 @@
       <div class="selling-line right"></div>
     </div>
 
-    <div class="games-row" style="display:block !important;">
+    <div class="games-row">
       <div class="game-dropdown-wrap" id="bleachDropdown">
         <button type="button" class="btn-game-main" onclick="document.getElementById('bleachDropdown').classList.toggle('open')">
           <span>&#128293; Bleach Soul Resonance APLUS</span>
@@ -1225,8 +1223,15 @@
         el.style.left = "-9999px";
         document.body.appendChild(el);
         el.select();
-        try { document.execCommand("copy"); gotovo(); } catch (e) {}
-        document.body.removeChild(el);
+        try {
+          if (document.execCommand("copy")) {
+            gotovo();
+          }
+        } catch (e) {
+          // Keep the button unchanged if copying is blocked by the browser.
+        } finally {
+          document.body.removeChild(el);
+        }
       }
     }
   </script>
