@@ -665,6 +665,151 @@
     transform: translateY(-1px);
   }
 
+
+
+  /* UPGRADE LIJEVE KUTIJE BEZ DIRANJA POZICIJE STRANICE */
+  .left-upgrade-wrap {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+  .btn-epicnpc-topic {
+    display: block !important;
+    width: 100% !important;
+    margin: 6px 0 !important;
+    padding: 6px 8px !important;
+    background: linear-gradient(90deg, #581c87 0%, #9333ea 50%, #581c87 100%) !important;
+    color: #ffe680 !important;
+    border: 1.5px solid #ffcc00 !important;
+    border-radius: 7px !important;
+    font-size: 10.5px !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    text-align: center !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.8) !important;
+    line-height: 1.2 !important;
+  }
+  .btn-epicnpc-topic:hover {
+    background: linear-gradient(90deg, #7e22ce 0%, #a855f7 50%, #7e22ce 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 14px rgba(255, 204, 0, 0.85) !important;
+  }
+  img[src*="epicnpc" i] {
+    border: 2.5px solid #ffcc00 !important;
+    border-radius: 10px !important;
+    box-shadow: 0 0 14px rgba(255, 204, 0, 0.75) !important;
+  }
+  .howtobuy-box {
+    width: 168px !important;
+    max-width: 168px !important;
+    background: linear-gradient(180deg, #160929 0%, #0d0717 100%) !important;
+    border: 2px solid #ffcc00 !important;
+    border-radius: 12px !important;
+    padding: 8px 8px 6px 8px !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.9), 0 0 15px rgba(168, 85, 247, 0.45) !important;
+    text-align: left !important;
+    flex-shrink: 0 !important;
+  }
+  .howtobuy-header {
+    text-align: center !important;
+    font-size: 11.5px !important;
+    font-weight: 900 !important;
+    color: #ffe680 !important;
+    text-transform: uppercase !important;
+    padding-bottom: 5px !important;
+    margin-bottom: 6px !important;
+    border-bottom: 1.5px solid rgba(255, 204, 0, 0.4) !important;
+  }
+  .htb-step {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+    margin-bottom: 5px !important;
+    background: rgba(88, 28, 135, 0.25) !important;
+    border: 1px solid rgba(168, 85, 247, 0.35) !important;
+    border-radius: 7px !important;
+    padding: 4px 5px !important;
+  }
+  .htb-step:last-child { margin-bottom: 0 !important; }
+  .htb-num {
+    min-width: 17px !important;
+    height: 17px !important;
+    background: linear-gradient(135deg, #ffcc00 0%, #f59e0b 100%) !important;
+    color: #0d0717 !important;
+    font-size: 10.5px !important;
+    font-weight: 900 !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .htb-txt { font-size: 10px !important; line-height: 1.22 !important; color: #f3e8ff !important; }
+  .htb-txt b { color: #ffe680 !important; display: block !important; font-size: 10.5px !important; }
+
+
+
+  /* TACNA MATEMATIKA OD RUBA DO BANERA */
+  .left-upgrade-wrap {
+    position: fixed !important;
+    top: 15px !important;
+    left: calc((100vw - 1080px) / 4) !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    z-index: 95 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    margin: 0 !important;
+  }
+  @media (max-width: 1620px) {
+    .left-upgrade-wrap {
+      left: 15px !important;
+      transform: none !important;
+    }
+  }
+  @media (max-width: 1440px) {
+    .left-upgrade-wrap {
+      position: static !important;
+      transform: none !important;
+      justify-content: center !important;
+      flex-wrap: wrap !important;
+      margin: 12px auto !important;
+    }
+  }
+
+
+
+  /* PORAVNAJ SREDISNJI OKVIR NA 1080PX */
+  body > div:not(.left-upgrade-wrap):not(.flag-clean-wrap):not(.live-top-box):not(.cosmic-sky),
+  .home-panel, .hero-card-box, .main-card, .bleach-panel, .discord-bar, .pay-bar {
+    max-width: 1080px !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+
+
+  /* SKROZ LIJEVO KAO NA DRUGOJ SLICI */
+  .left-upgrade-wrap,
+  .left-side-row {
+    position: fixed !important;
+    top: 15px !important;
+    left: 10px !important;
+    right: auto !important;
+    transform: none !important;
+    z-index: 999 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    margin: 0 !important;
+  }
+
 </style>
 </head>
 <body>
@@ -715,8 +860,20 @@
         </div>
       </div>
     </div>
-  <div class="trusted-box">
-    <div class="trusted-text">⭐ 100% Trusted Seller ⭐</div><a href="https://epicnpc.com" target="_blank" rel="noopener"><img src="home_config/epicnpc.png" alt="EpicNPC Trusted Seller"></a></div>
+  <div class="trusted-box left-upgrade-wrap" style="background:none !important; border:none !important; box-shadow:none !important; padding:0 !important; width:auto !important;">
+  <div class="trusted-box" style="position:static !important; transform:none !important; margin:0 !important;">
+    <div class="trusted-text">⭐ 100% Trusted Seller ⭐</div><a href="https://epicnpc.com" target="_blank" rel="noopener"><a href="https://www.epicnpc.com/members/genesisgacha.1199111/" target="_blank" rel="noopener" class="btn-epicnpc-topic">&#128293; Click Here for EpicNPC Profile</a>
+    <img src="home_config/epicnpc.png" alt="EpicNPC Trusted Seller"></a></div>
+  <div class="howtobuy-box">
+    <div class="howtobuy-header">&#128722; How to Buy</div>
+    <div class="htb-step"><span class="htb-num">1</span><div class="htb-txt"><b>Pick Account</b>Select your favorite Account #.</div></div>
+    <div class="htb-step"><span class="htb-num">2</span><div class="htb-txt"><b>Add on Discord</b>Message me with the Account #.</div></div>
+    <div class="htb-step"><span class="htb-num">3</span><div class="htb-txt"><b>Live Account Check</b>I will log back into the account so we can confirm it's the exact one you want.</div></div>
+    <div class="htb-step"><span class="htb-num">4</span><div class="htb-txt"><b>Easy Payment</b>Pay via PayPal or Steam Gift.</div></div>
+    <div class="htb-step"><span class="htb-num">5</span><div class="htb-txt"><b>Account Binding</b>Send mail or dummy mail &amp; password.</div></div>
+    <div class="htb-step"><span class="htb-num">6</span><div class="htb-txt"><b>100% Yours</b>Account is 100% yours &mdash; change the password and do whatever you want!</div></div>
+  </div>
+</div>
   
   
   
