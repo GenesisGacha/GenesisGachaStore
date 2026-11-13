@@ -602,7 +602,7 @@
     <div class="info-bar">
       <span>💬 For any questions, prices or more images, add me on Discord:</span>
       <span class="dc-tag">GenesisGacha#0271</span>
-      <button type="button" id="copyBtnHome" class="btn-copy-dc" onclick="copyDiscordHome()">📋 Copy</button>
+      <button type="button" id="copyBtnHome" class="btn-copy-dc" onclick="kopirajMojDiscord(this)">📋 Copy</button>
     </div>
 
     <div class="pay-bar">
@@ -654,5 +654,41 @@
   })();
   </script>
   <!--End of Tawk.to Script-->
+
+  <script>
+    function kopirajMojDiscord(btn) {
+      var tekst = "GenesisGacha#0271";
+      function gotovo() {
+        if (btn) {
+          btn.innerText = "✔ Copied!";
+          btn.style.background = "#16a34a";
+          btn.style.borderColor = "#4ade80";
+          setTimeout(function() {
+            btn.innerText = "📋 Copy";
+            btn.style.background = "";
+            btn.style.borderColor = "";
+          }, 2000);
+        }
+      }
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(tekst).then(gotovo).catch(function() {
+          rezerva(tekst);
+        });
+      } else {
+        rezerva(tekst);
+      }
+      function rezerva(val) {
+        var el = document.createElement("textarea");
+        el.value = val;
+        el.style.position = "fixed";
+        el.style.left = "-9999px";
+        document.body.appendChild(el);
+        el.select();
+        try { document.execCommand("copy"); gotovo(); } catch (e) {}
+        document.body.removeChild(el);
+      }
+    }
+  </script>
+
 </body>
 </html>
