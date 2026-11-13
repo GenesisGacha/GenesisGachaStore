@@ -1059,6 +1059,8 @@
 
 
 
+  
+  /* CISTI RASPORED KATALOGA (PC I MOBITEL) */
   .two-games-row {
     display: inline-flex !important;
     flex-direction: row !important;
@@ -1083,8 +1085,8 @@
     width: 245px !important;
     min-width: 245px !important;
     max-width: 245px !important;
-    min-height: 74px !important;
     height: 74px !important;
+    min-height: 74px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
@@ -1097,13 +1099,6 @@
     margin-top: 10px !important;
     box-sizing: border-box !important;
   }
-
-
-
-  
-
-
-
   @media (max-width: 768px) {
     .two-games-row {
       display: flex !important;
@@ -1118,18 +1113,8 @@
       gap: 12px !important;
     }
     .two-games-row > div {
-      width: 245px !important;
-      min-width: 245px !important;
-      max-width: 245px !important;
-      height: auto !important;
-      min-height: 0 !important;
-      flex: 0 0 auto !important;
       margin: 0 auto !important;
-      padding: 0 !important;
       align-items: center !important;
-    }
-    .two-games-row > div > div:first-child {
-      margin-bottom: 0 !important;
     }
     .two-games-row > div > div:not(:first-child) {
       margin-top: 8px !important;
@@ -1137,7 +1122,6 @@
       position: static !important;
     }
   }
-
 </style>
 
 
@@ -1308,7 +1292,8 @@
   </script>
   <!--End of Tawk.to Script-->
 
-  <script>
+  </div>
+<script>
     function kopirajMojDiscord(btn) {
       var tekst = "GenesisGacha#0271";
       function gotovo() {
@@ -1414,69 +1399,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  var sviDivovi = Array.from(document.querySelectorAll('.two-games-row > div'));
-  var desnaKartica = sviDivovi.find(function(el) { return el.textContent.indexOf('Bleach Mirrors High') !== -1; });
-  if (!desnaKartica) return;
 
-  var lijeviLink = Array.from(document.querySelectorAll('a')).find(function(a) {
-    return a.textContent.indexOf('Starter Accounts with Characters') !== -1;
-  });
 
-  var stupac = document.createElement('div');
-  stupac.style.setProperty('display', 'inline-flex', 'important');
-  stupac.style.setProperty('flex-direction', 'column', 'important');
-  stupac.style.setProperty('align-items', 'flex-start', 'important');
 
-  desnaKartica.parentNode.insertBefore(stupac, desnaKartica);
-  stupac.appendChild(desnaKartica);
-
-  var noviMeni = document.createElement('div');
-  if (lijeviLink && lijeviLink.parentElement) {
-    noviMeni.className = lijeviLink.parentElement.className;
-  }
-  noviMeni.style.setProperty('display', 'none', 'important');
-  noviMeni.style.setProperty('margin-top', '10px', 'important');
-  noviMeni.style.setProperty('box-sizing', 'border-box', 'important');
-  noviMeni.style.setProperty('min-width', '0', 'important');
-
-  var noviLink = lijeviLink ? lijeviLink.cloneNode(true) : document.createElement('a');
-  noviLink.href = 'https://genesisgachastore.github.io/Bleach-Mirrors-High-EU-Starter-Accounts-/';
-  noviLink.onclick = function(e) { e.stopPropagation(); window.location.href = 'https://genesisgachastore.github.io/Bleach-Mirrors-High-EU-Starter-Accounts-/'; };
-  noviLink.style.setProperty('width', '100%', 'important');
-  noviLink.style.setProperty('min-width', '0', 'important');
-  noviLink.style.setProperty('box-sizing', 'border-box', 'important');
-  noviLink.style.setProperty('white-space', 'normal', 'important');
-  noviMeni.appendChild(noviLink);
-
-  stupac.appendChild(noviMeni);
-
-  desnaKartica.style.cursor = 'pointer';
-  desnaKartica.onclick = function(e) {
-    if (e.target.tagName === 'A') return;
-    e.preventDefault();
-    e.stopPropagation();
-    var otvoren = noviMeni.style.display !== 'none';
-    if (!otvoren) {
-      var lijevaKutija = lijeviLink ? lijeviLink.parentElement : null;
-      var lijevaSirina = lijevaKutija ? Math.round(lijevaKutija.getBoundingClientRect().width) : 0;
-      var ciljnaSirina = 245;
-      noviMeni.style.setProperty('width', ciljnaSirina + 'px', 'important');
-      noviMeni.style.setProperty('max-width', ciljnaSirina + 'px', 'important');
-      noviMeni.style.setProperty('display', 'flex', 'important');
-    } else {
-      noviMeni.style.setProperty('display', 'none', 'important');
-    }
-    var strelica = desnaKartica.querySelector('.arrow, span:last-child');
-    if (strelica) {
-      strelica.style.display = 'inline-block';
-      strelica.style.transition = 'transform 0.2s ease';
-      strelica.style.transform = otvoren ? 'rotate(0deg)' : 'rotate(180deg)';
-    }
-  };
-});
-</script>
 
 
 
@@ -1487,6 +1412,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var row = document.querySelector('.two-games-row');
   if (!row) return;
 
+  // 1. Lijeva kartica (Bleach Soul Resonance APLUS)
   var jadesLink = Array.from(document.querySelectorAll('a')).find(function(a) {
     return a.textContent.indexOf('Only Jades') !== -1;
   });
@@ -1497,32 +1423,67 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (bsrHeader && lijeviPadajuci) {
     var lijeviStupac = document.createElement('div');
-    lijeviStupac.style.setProperty('display', 'inline-flex', 'important');
-    lijeviStupac.style.setProperty('flex-direction', 'column', 'important');
-    lijeviStupac.style.setProperty('align-items', 'flex-start', 'important');
-    lijeviStupac.style.setProperty('width', '245px', 'important');
-
     row.insertBefore(lijeviStupac, row.firstChild);
     lijeviStupac.appendChild(bsrHeader);
     lijeviStupac.appendChild(lijeviPadajuci);
-
-    bsrHeader.style.setProperty('width', '245px', 'important');
-    bsrHeader.style.setProperty('height', '74px', 'important');
-    bsrHeader.style.setProperty('box-sizing', 'border-box', 'important');
-
-    lijeviPadajuci.style.setProperty('width', '245px', 'important');
-    lijeviPadajuci.style.setProperty('max-width', '245px', 'important');
-    lijeviPadajuci.style.setProperty('margin-top', '10px', 'important');
-    lijeviPadajuci.style.setProperty('box-sizing', 'border-box', 'important');
     lijeviPadajuci.style.setProperty('display', 'none', 'important');
 
-    // Klik direktno otvara/zatvara lijevi padajuci okvir tacno ispod zaglavlja
+    bsrHeader.style.cursor = 'pointer';
     bsrHeader.addEventListener('click', function(e) {
       if (e.target.tagName === 'A') return;
       var jeSkriven = (lijeviPadajuci.style.display === 'none');
       lijeviPadajuci.style.setProperty('display', jeSkriven ? 'flex' : 'none', 'important');
       lijeviPadajuci.style.setProperty('flex-direction', 'column', 'important');
     });
+  }
+
+  // 2. Desna kartica (Bleach Mirrors High EU)
+  var desnaKartica = Array.from(row.querySelectorAll('div')).find(function(el) {
+    return el.textContent.indexOf('Bleach Mirrors High') !== -1 && el.children.length > 0 && el.offsetHeight < 120;
+  });
+  var lijeviLink = Array.from(document.querySelectorAll('a')).find(function(a) {
+    return a.textContent.indexOf('Starter Accounts with Characters') !== -1 && a.href.indexOf('Mirrors-High') === -1;
+  });
+
+  if (desnaKartica) {
+    var desniStupac = desnaKartica.parentElement;
+    if (desniStupac === row) {
+      desniStupac = document.createElement('div');
+      row.insertBefore(desniStupac, desnaKartica);
+      desniStupac.appendChild(desnaKartica);
+    }
+
+    var noviMeni = document.createElement('div');
+    if (lijeviLink && lijeviLink.parentElement) {
+      noviMeni.className = lijeviLink.parentElement.className;
+    }
+    noviMeni.style.setProperty('display', 'none', 'important');
+
+    var noviLink = lijeviLink ? lijeviLink.cloneNode(true) : document.createElement('a');
+    var url = 'https://genesisgachastore.github.io/Bleach-Mirrors-High-EU-Starter-Accounts-/';
+    noviLink.href = url;
+    noviLink.textContent = '? Starter Accounts with Characters';
+    noviLink.style.setProperty('width', '100%', 'important');
+    noviLink.style.setProperty('box-sizing', 'border-box', 'important');
+    noviLink.style.setProperty('white-space', 'normal', 'important');
+    noviLink.onclick = function(e) { e.stopPropagation(); window.location.href = url; };
+    noviMeni.appendChild(noviLink);
+    desniStupac.appendChild(noviMeni);
+
+    desnaKartica.style.cursor = 'pointer';
+    desnaKartica.onclick = function(e) {
+      if (e.target.tagName === 'A') return;
+      e.preventDefault();
+      e.stopPropagation();
+      var otvoren = noviMeni.style.display !== 'none';
+      noviMeni.style.setProperty('display', otvoren ? 'none' : 'flex', 'important');
+      var strelica = desnaKartica.querySelector('.arrow, span:last-child');
+      if (strelica) {
+        strelica.style.display = 'inline-block';
+        strelica.style.transition = 'transform 0.2s ease';
+        strelica.style.transform = otvoren ? 'rotate(0deg)' : 'rotate(180deg)';
+      }
+    };
   }
 });
 </script>
