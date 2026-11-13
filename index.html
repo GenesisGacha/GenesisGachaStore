@@ -641,57 +641,7 @@
     <script async src="//waust.at/s.js"></script>
   </div>
 
-  <div class="live-top-box" title="Real-time visitors online">
-    <span style="display:inline-block; width:8px; height:8px; background:#22c55e; border-radius:50%; box-shadow:0 0 8px #22c55e;"></span>
-    <span style="font-size:12px; font-weight:bold; color:#ffe680;">LIVE:</span>
-    
-
-  <script>
-    function copyDiscordHome() {
-      var tekst = "GenesisGacha#0271";
-      var btn = document.getElementById("copyBtnHome");
-
-      function prikaziPotvrdu() {
-        if (btn) {
-          btn.innerText = "✔ Copied!";
-          btn.style.background = "#16a34a";
-          btn.style.borderColor = "#4ade80";
-          setTimeout(function() {
-            btn.innerText = "📋 Copy";
-            btn.style.background = "";
-            btn.style.borderColor = "";
-          }, 2000);
-        }
-      }
-
-      if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(tekst).then(prikaziPotvrdu).catch(function() {
-          rezervnoKopiranje(tekst);
-        });
-      } else {
-        rezervnoKopiranje(tekst);
-      }
-
-      function rezervnoKopiranje(val) {
-        var polje = document.createElement("textarea");
-        polje.value = val;
-        polje.style.position = "fixed";
-        polje.style.left = "-9999px";
-        document.body.appendChild(polje);
-        polje.focus();
-        polje.select();
-        try {
-          document.execCommand("copy");
-          prikaziPotvrdu();
-        } catch (err) {}
-        document.body.removeChild(polje);
-      }
-    }
-  </script>
-
-  
-
-  <!--Start of Tawk.to Script-->
+<!--Start of Tawk.to Script-->
   <script type="text/javascript">
   var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
   (function(){
